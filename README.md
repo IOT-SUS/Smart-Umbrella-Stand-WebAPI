@@ -3,14 +3,16 @@
 
 ## File Structure
 ```bash
-├── app.py
+.
 ├── config
 ├── controllers
-├── libs
-├── middlewares
 ├── models
-├── router.py
-├── run.py
+├── middlewares
+├── libs
 ├── static
-└── templates
+├── templates
+├── router.py
+├── app.py
+├── run.py
+└── README.md
 ```

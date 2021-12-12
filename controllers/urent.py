@@ -1,4 +1,5 @@
 from app import app
+from models.devices import devicesSchema
 
 class urent():
     @staticmethod
@@ -8,21 +9,10 @@ class urent():
         device_id = req.url_variable['device_id']
         
         # search device by id
-        fake_devices = {
-            'sdfe297123' : {
-                'location': '台北市文山區汀州路四段88號',
-                'amount'  : 10
-            },
-            'ddcd291217' : {
-                'location': '台北市大安區和平東路一段162號',
-                'amount'  : 0
-            }
-        }
-
-        assert device_id in fake_devices
+        fake_device = devicesSchema.find(device_id)
 
         # check amount
-        available = True if fake_devices[device_id]['amount'] > 0 else False
+        available = True if fake_device['amount'] > 0 else False
 
         # make response
         res.message = 'Check device umbrella rent successfully.'

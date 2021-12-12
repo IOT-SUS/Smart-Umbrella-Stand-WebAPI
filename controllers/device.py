@@ -1,20 +1,12 @@
 from app import app
+from models.devices import devicesSchema
 
 class device():
     @staticmethod
     def infos(req, res):
         """devices information"""
         # search all deviecs information
-        fake_devices = {
-            'sdfe297123' : {
-                'location': '台北市文山區汀州路四段88號',
-                'amount'  : 10
-            },
-            'ddcd291217' : {
-                'location': '台北市大安區和平東路一段162號',
-                'amount'  : 0
-            }
-        }
+        fake_devices = devicesSchema.find_all()
 
         # make response
         res.message = 'Get devices information successfully.'
@@ -28,19 +20,9 @@ class device():
         device_id = req.url_variable['device_id']
         
         # search deviec information
-        fake_devices = {
-            'sdfe297123' : {
-                'location': '台北市文山區汀州路四段88號',
-                'amount'  : 10
-            },
-            'ddcd291217' : {
-                'location': '台北市大安區和平東路一段162號',
-                'amount'  : 0
-            }
-        }
-        assert device_id in fake_devices
+        fake_device = devicesSchema.find(device_id)
 
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_devices[device_id]
+        res.data    = fake_device[device_id]
         return res

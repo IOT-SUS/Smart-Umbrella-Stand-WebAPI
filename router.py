@@ -9,20 +9,31 @@ from controllers.device  import device
 from controllers.urent   import urent
 from controllers.ureturn import ureturn
 
+# ============================================================================
+# "                         FRONTEND HTML PAGE                               "
+# ============================================================================
 
-# Auth route
+# Home page
+router.render_page(url='/', template='index.html')
+
+
+# ============================================================================
+# "                             BACKEND API                                  "
+# ============================================================================
+
+# Auth api
 router.post(url='/auth/login',  controller=auth.login)
 router.post(url='/auth/signup', controller=auth.signup)
 
-# User route
+# User api
 router.get(url='/user', authentication=authentication, controller=user.info)
 
 # Device route
 router.get(url='/devices',            controller=device.infos)
 router.get(url='/device/<device_id>', controller=device.info)
 
-# Rent route
+# Rent api
 router.get(url='/device/<device_id>/rent', controller=urent.checkAvailable)
 
-# Return route
+# Return api
 router.get(url='/device/<device_id>/return', controller=ureturn.checkAvailable)

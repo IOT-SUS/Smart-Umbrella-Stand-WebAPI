@@ -1,7 +1,9 @@
 from app import app
+
 from flask import request
 from flask import jsonify
 from flask import make_response
+from flask import render_template
 
 class response():
     def __init__(self):
@@ -62,3 +64,11 @@ class router():
     @staticmethod
     def delete(url, authentication=None, adminAuthorization=None, controller=None):
         router._route(url, ['DELETE'], authentication, adminAuthorization, controller)
+
+    @staticmethod
+    def render_page(url, template):
+        def _controller():
+            return render_template(template)
+        # change endpoint name
+        _controller.__name__ = router._getcontrollername()
+        app.route(url, methods=['GET'])(_controller)

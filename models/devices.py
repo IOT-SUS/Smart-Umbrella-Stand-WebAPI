@@ -1,5 +1,6 @@
+from app import mongo
 
-class devicesSchema():
+class devicesModel():
     devices = {
         'sdfe297123' : {
             'location': '台北市文山區汀州路四段88號',
@@ -12,8 +13,8 @@ class devicesSchema():
     }
 
     def find(public_id):
-        data = devicesSchema.devices[public_id] if public_id in devicesSchema.devices else None
+        data = devicesModel.devices[public_id] if public_id in devicesModel.devices else None
         return data
     
     def find_all():
-        return devicesSchema.devices
+        return devicesModel.devices

@@ -31,12 +31,12 @@ class router():
                 # check authentication
                 if authentication is not None:
                     authentication(req, res)
-                    if res.statusCode == 400:
+                    if res.statusCode >= 400:
                         return make_response(jsonify(res.toDict()), res.statusCode)
                 # check adminAuthorization
                 if adminAuthorization is not None:
                     adminAuthorization(req, res)
-                    if res.statusCode == 400:
+                    if res.statusCode >= 400:
                         return make_response(jsonify(res.toDict()), res.statusCode)
                 # do the control
                 controller(req, res)

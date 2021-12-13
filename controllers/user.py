@@ -1,15 +1,15 @@
 from app import app
-from models.users import usersSchema
+from models.users import usersModel
 
 class user():
     @staticmethod
     def info(req, res):
         """user information"""
-        # get url variable
-        user_id = req.url_variable['user_id']
+        # get token user id
+        user_id = req.user_id
 
         # search user
-        fake_user = usersSchema.find(user_id)
+        fake_user = usersModel.find(user_id)
 
         # make response
         res.message = 'Get user information successfully.'

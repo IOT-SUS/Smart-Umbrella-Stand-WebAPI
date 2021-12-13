@@ -1,12 +1,12 @@
 from app import app
-from models.devices import devicesSchema
+from models.devices import devicesModel
 
 class device():
     @staticmethod
     def infos(req, res):
         """devices information"""
         # search all deviecs information
-        fake_devices = devicesSchema.find_all()
+        fake_devices = devicesModel.find_all()
 
         # make response
         res.message = 'Get devices information successfully.'
@@ -20,9 +20,9 @@ class device():
         device_id = req.url_variable['device_id']
         
         # search deviec information
-        fake_device = devicesSchema.find(device_id)
+        fake_device = devicesModel.find(device_id)
 
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_device[device_id]
+        res.data    = fake_device
         return res

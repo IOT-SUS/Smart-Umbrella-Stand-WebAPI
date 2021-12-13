@@ -1,5 +1,6 @@
+from app import mongo
 
-class usersSchema():
+class usersModel():
     users = {
         'ef8697123': {
             'name'      : '王小明',
@@ -16,10 +17,6 @@ class usersSchema():
     }
 
     @staticmethod
-    def find( public_id):
-        data = usersSchema.users[public_id] if public_id in usersSchema.users else None
+    def find(public_id):
+        data = usersModel.users[public_id] if public_id in usersModel.users else None
         return data
-    
-    @staticmethod
-    def find_all():
-        return usersSchema.users

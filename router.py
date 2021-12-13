@@ -1,4 +1,5 @@
 from app import app
+
 from libs.utils.router import router
 
 from middlewares.authentication import authentication
@@ -22,18 +23,18 @@ router.render_page(url='/', template='index.html')
 # ============================================================================
 
 # Auth api
-router.post(url='/auth/login',  controller=auth.login)
+router.post(url='/api/auth/login',  controller=auth.login)
 router.post(url='/auth/signup', controller=auth.signup)
 
 # User api
-router.get(url='/user', authentication=authentication, controller=user.info)
+router.get(url='/api/user', authentication=authentication, controller=user.info)
 
 # Device route
-router.get(url='/devices',            controller=device.infos)
-router.get(url='/device/<device_id>', controller=device.info)
+router.get(url='/api/devices',            controller=device.infos)
+router.get(url='/api/device/<device_id>', controller=device.info)
 
 # Rent api
-router.get(url='/device/<device_id>/rent', controller=urent.checkAvailable)
+router.get(url='/api/device/<device_id>/rent', controller=urent.checkAvailable)
 
 # Return api
-router.get(url='/device/<device_id>/return', controller=ureturn.checkAvailable)
+router.get(url='/api/device/<device_id>/return', controller=ureturn.checkAvailable)

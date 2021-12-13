@@ -1,4 +1,7 @@
+import datetime
+
 from app import app
+from libs.utils.jsonWebToken import jsonWebToken as jwt
 
 class auth():
     @staticmethod
@@ -10,13 +13,18 @@ class auth():
         email    = data['email']
         password = data['password']
 
-        # do some user vaildation
-        # ...
+        # search users by email
+        # check password
+
+        fake_user_id = 'ef8697123'
+        
+        # create json web token
+        token = jwt.createToken(user_id=fake_user_id)
 
         # make response
         res.message = 'Login successfully.'
         res.data    = {
-            'token' : app.config['FAKE_TOKEN']
+            'token' : token
         }
         return res
 
@@ -29,6 +37,8 @@ class auth():
         email    = data['email']
         password = data['password']
         # need to add phone, name, birthday
+
+        # check if email already exist...
 
         # create user
         # ...

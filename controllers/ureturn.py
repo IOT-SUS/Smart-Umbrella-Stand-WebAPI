@@ -1,5 +1,5 @@
 from app import app
-from models.devices import devicesSchema
+from models.devices import devicesModel
 
 class ureturn():
     @staticmethod
@@ -9,7 +9,7 @@ class ureturn():
         device_id = req.url_variable['device_id']
         
         # search device by id
-        fake_device = devicesSchema.find(device_id)
+        fake_device = devicesModel.find(device_id)
 
         # check amount
         available = True if fake_device['amount'] < 15 else False

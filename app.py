@@ -2,10 +2,27 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 
+from flask_pymongo import PyMongo
+
 app = Flask(__name__)
 
 # add config
-app.config['FAKE_TOKEN'] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTEwNjEwODExNyIsIl9pZCI6IjYwY2FkMGQ3YzE1MzhlMTg2NjQ3OTIwZCIsInN0dWRlbnRfaWQiOiIxMTA2MTA4MTE3IiwiY3JlYXRlZF9hdCI6IjIwMjEtMDYtMTdUMDQ6MzQ6MzEuMDczWiIsInVwZGF0ZWRfYXQiOiIyMDIxLTA2LTE3VDA0OjM0OjMxLjA3M1oiLCJfX3YiOjAsInJlbWFyayI6ImFkbWluIiwiaWF0IjoxNjI2OTYzNzQ5LCJleHAiOjE2MjcwNTAxNDl9.tjoOVQWCJbRvB3CjknQ6_cHU0lr8bGaQF9D9Aok-Zl0"
+from cfg import config
+
+# server
+app.config['SERVER_NAME'] = config.SERVER_NAME
+
+# mongodb
+app.config["MONGO_URI"]  = config.MONGO_URI
+
+# json web token
+app.config['FAKE_TOKEN']        = config.TOKEN_FAKE
+app.config['TOKEN_SECRET_KEY']  = config.TOKEN_SECRET_KEY
+app.config['TOKEN_EXPIRE_TIME'] = config.TOKEN_EXPIRE_TIME
+
+# python mongodb
+mongo  = PyMongo(app)
+
 
 # add router
 from router import *

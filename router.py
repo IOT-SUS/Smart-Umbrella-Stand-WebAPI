@@ -24,7 +24,7 @@ router.render_page(url='/', template='index.html')
 
 # Auth api
 router.post(url='/api/auth/login',  controller=auth.login)
-router.post(url='/auth/signup', controller=auth.signup)
+router.post(url='/api/auth/signup', controller=auth.signup)
 
 # User api
 router.get(url='/api/user', authentication=authentication, controller=user.info)

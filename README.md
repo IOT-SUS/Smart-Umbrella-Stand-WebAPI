@@ -1,6 +1,8 @@
 # BackendAPI-Flask-Structure
 結構化的範例程式
 
+![Picture1](https://user-images.githubusercontent.com/60885166/145822080-b13f87d5-22d8-4806-b7f1-5818ad0ea0e4.png)
+
 ## File Structure
 ```bash
 config      # 所有設定資料 ex: secret token

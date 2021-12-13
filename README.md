@@ -1,10 +1,6 @@
 # BackendAPI-Flask-Structure
 結構化的範例程式
 
-## Web Page Prototype
-
-![image](https://drive.google.com/uc?export=view&id=1pOuoeT-0PRrheSaLYqMfSdZSxCQosqEy)
-
 ## File Structure
 ```bash
 config      # 所有設定資料 ex: secret token

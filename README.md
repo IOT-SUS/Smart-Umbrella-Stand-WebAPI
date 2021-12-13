@@ -2,7 +2,8 @@
 結構化的範例程式
 
 ## Web Page Prototype
-https://drive.google.com/file/d/1pOuoeT-0PRrheSaLYqMfSdZSxCQosqEy/view?usp=sharing
+
+![image](https://drive.google.com/uc?export=view&id=1pOuoeT-0PRrheSaLYqMfSdZSxCQosqEy)
 
 ## File Structure
 ```bash

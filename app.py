@@ -16,7 +16,6 @@ app.config['SERVER_NAME'] = config.SERVER_NAME
 app.config["MONGO_URI"]  = config.MONGO_URI
 
 # json web token
-app.config['FAKE_TOKEN']        = config.TOKEN_FAKE
 app.config['TOKEN_SECRET_KEY']  = config.TOKEN_SECRET_KEY
 app.config['TOKEN_EXPIRE_TIME'] = config.TOKEN_EXPIRE_TIME
 

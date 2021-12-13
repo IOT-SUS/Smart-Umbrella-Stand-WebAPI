@@ -2,7 +2,8 @@ from app import app
 
 from libs.utils.router import router
 
-from middlewares.authentication import authentication
+from middlewares.authentication      import authentication
+from middlewares.adminAuthentication import adminAuthentication
 
 from controllers.auth    import auth
 from controllers.user    import user

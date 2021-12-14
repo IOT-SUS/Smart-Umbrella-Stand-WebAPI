@@ -1,10 +1,8 @@
 import uuid
-
-from datetime import datetime
-
-from flask_bcrypt     import Bcrypt
 from app import app
 from app import mongo
+from datetime import datetime
+from flask_bcrypt     import Bcrypt
 
 bcrypt = Bcrypt(app)
 

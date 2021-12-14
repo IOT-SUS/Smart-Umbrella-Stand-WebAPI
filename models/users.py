@@ -1,22 +1,44 @@
+from app import app
 from app import mongo
+from flask_bcrypt     import Bcrypt
+from datetime import datetime
+import uuid
+
+bcrypt = Bcrypt(app)
 
 class usersModel():
-    users = {
-        'ef8697123': {
-            'name'      : '王小明',
-            'email'     : 'dummy@gmail.com',
-            'subscriber': True,
-            'admin'     : True
-        },
-        'bs9435451': {
-            'name'      : '歐絣康',
-            'email'     : 'dummy2@gmail.com',
-            'subscriber': False,
-            'admin'     : False
-        }
-    }
+    
+    @staticmethod
+    def add(user):
+        now_time = datetime.now().isoformat()
+        user['password']   = bcrypt.generate_password_hash(user['password']).decode('utf-8')
+        user['public_id']  = str(uuid.uuid4())[:8]
+        user['created_at'] = now_time
+        user['updated_at'] = now_time
+        user['admin']      = False
+        mongo.db.users.insert_one(user)
+    
+    @staticmethod
+    def find(user_id):
+        return list(mongo.db.users.find({'public_id': user_id}))
 
     @staticmethod
-    def find(public_id):
-        data = usersModel.users[public_id] if public_id in usersModel.users else None
-        return data
+    def login(email, password):
+        user = mongo.db.users.find({'email': email})[0]
+        return bcrypt.check_password_hash(user['password'], password)
+
+    @staticmethod
+    def update(user_id, update_query):
+        now_time = datetime.now().isoformat()
+        update_query['updated_at'] = now_time
+        mongo.db.users.update_one({'public_id': user_id}, {'$set': update_query})
+
+    @staticmethod
+    def delete(user_id):
+        mongo.db.users.delete_one({'public_id': user_id})   
+
+    @staticmethod
+    def find_user_by_email(email):
+        user = mongo.db.users.find({'email': email})[0]
+        print(user)
+        return user['public_id'] 

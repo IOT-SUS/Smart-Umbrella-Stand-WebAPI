@@ -1,10 +1,8 @@
 import uuid
-
-from datetime import datetime
-
-from flask_bcrypt     import Bcrypt
 from app import app
 from app import mongo
+from datetime import datetime
+from flask_bcrypt     import Bcrypt
 
 bcrypt = Bcrypt(app)
 
@@ -14,6 +12,8 @@ class umbrellasModel():
     def add(umbrella):
         now_time = datetime.now().isoformat()
         umbrella['public_id']  = str(uuid.uuid4())[:8]
+        umbrella['created_at'] = now_time
+        umbrella['updated_at'] = now_time
         mongo.db.umbrellas.insert_one(umbrella)
         
     @staticmethod
@@ -26,6 +26,8 @@ class umbrellasModel():
 
     @staticmethod
     def update(umbrella_id, update_query):
+        now_time = datetime.now().isoformat()
+        update_query['updated_at'] = now_time
         mongo.db.umbrellas.update_one({'public_id': umbrella_id}, {'$set': update_query})
     
     @staticmethod

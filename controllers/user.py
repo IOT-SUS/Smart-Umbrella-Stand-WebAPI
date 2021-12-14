@@ -2,6 +2,7 @@ from app import app
 from models.users import usersModel
 
 class user():
+    
     @staticmethod
     def info(req, res):
         """user information"""

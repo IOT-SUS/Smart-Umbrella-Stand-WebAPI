@@ -40,3 +40,15 @@ class user():
         # make response
         res.message = 'Update user information successfully.'
         return res
+
+    @staticmethod
+    def delete(req, res):
+        """user information"""
+        # get token user id
+        user_id = req.user_id
+
+        usersModel.delete(user_id)
+
+        # make response
+        res.message = 'Delete user account successfully.'
+        return res

@@ -30,6 +30,7 @@ router.post(url='/api/auth/signup', controller=auth.signup)
 # User api
 router.get(url='/api/user', authentication=authentication, controller=user.info)
 router.post(url='/api/user/update', authentication=authentication, controller=user.update)
+router.post(url='/api/user/delete', authentication=authentication, controller=user.delete)
 
 # Device route
 router.get(url='/api/devices',            controller=device.infos)

@@ -1,20 +1,34 @@
+import uuid
+
+from datetime import datetime
+
+from flask_bcrypt     import Bcrypt
+from app import app
 from app import mongo
 
-class devicesModel():
-    devices = {
-        'sdfe297123' : {
-            'location': '台北市文山區汀州路四段88號',
-            'amount'  : 10
-        },
-        'ddcd291217' : {
-            'location': '台北市大安區和平東路一段162號',
-            'amount'  : 0
-        }
-    }
+bcrypt = Bcrypt(app)
 
-    def find(public_id):
-        data = devicesModel.devices[public_id] if public_id in devicesModel.devices else None
-        return data
-    
+class devicesModel():
+
+    @staticmethod
+    def add(devices):
+        devices['public_id']  = str(uuid.uuid4())[:8]
+        mongo.db.devices.insert_one(devices)
+        
+    @staticmethod
+    def find(device_id):
+        return list(mongo.db.devices.find({'public_id': device_id}))
+
+    @staticmethod
     def find_all():
         return devicesModel.devices
+
+    @staticmethod
+    def update(device_id, update_query):
+        mongo.db.devices.update_one({'public_id': device_id}, {'$set': update_query})
+    
+    @staticmethod
+    def delete(device_id):
+        mongo.db.devices.delete_one({'public_id': device_id})
+
+

@@ -11,13 +11,13 @@ bcrypt = Bcrypt(app)
 class rentsModel():
 
     @staticmethod
-    def add(rents):
+    def add(rent):
         now_time = datetime.now().isoformat()
-        rents['public_id']  = str(uuid.uuid4())[:8]
-        rents['return_device_id']  = None
-        rents['rent_time']  = now_time
-        rents['return_time']  = None
-        mongo.db.rents.insert_one(rents)
+        rent['public_id']  = str(uuid.uuid4())[:8]
+        rent['return_device_id']  = None
+        rent['rent_time']  = now_time
+        rent['return_time']  = None
+        mongo.db.rents.insert_one(rent)
         
     @staticmethod
     def find(rent_id):

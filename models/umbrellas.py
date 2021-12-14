@@ -11,10 +11,10 @@ bcrypt = Bcrypt(app)
 class umbrellasModel():
 
     @staticmethod
-    def add(umbrellas):
+    def add(umbrella):
         now_time = datetime.now().isoformat()
-        umbrellas['public_id']  = str(uuid.uuid4())[:8]
-        mongo.db.umbrellas.insert_one(umbrellas)
+        umbrella['public_id']  = str(uuid.uuid4())[:8]
+        mongo.db.umbrellas.insert_one(umbrella)
         
     @staticmethod
     def find(umbrella_id):

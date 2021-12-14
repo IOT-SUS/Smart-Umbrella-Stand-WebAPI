@@ -11,9 +11,9 @@ bcrypt = Bcrypt(app)
 class devicesModel():
 
     @staticmethod
-    def add(devices):
-        devices['public_id']  = str(uuid.uuid4())[:8]
-        mongo.db.devices.insert_one(devices)
+    def add(device):
+        device['public_id']  = str(uuid.uuid4())[:8]
+        mongo.db.devices.insert_one(device)
         
     @staticmethod
     def find(device_id):

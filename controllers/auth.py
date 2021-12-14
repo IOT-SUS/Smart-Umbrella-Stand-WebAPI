@@ -1,9 +1,11 @@
 import datetime
 
+from models.users import usersModel
 from app import app
 from libs.utils.jsonWebToken import jsonWebToken as jwt
 
 class auth():
+
     @staticmethod
     def login(req, res):
         """"user login"""
@@ -15,6 +17,11 @@ class auth():
 
         # search users by email
         # check password
+        validation = usersModel.login(email, password) # True or False
+        if validation == False:
+            res.message = 'Login failed.'
+            res.statusCode = 403
+            return res
 
         fake_user_id = 'ef8697123'
         
@@ -34,9 +41,21 @@ class auth():
         # get request data
         data = req.get_json()
         
-        email    = data['email']
-        password = data['password']
+        name       = data['name']
+        email      = data['email']
+        password   = data['password']
+        birthday   = data['birthday']
+        phone      = data['phone']
+
         # need to add phone, name, birthday
+        user = {
+            'name' : name,
+            'email' : email,
+            'password' : password,
+            'birthday' : birthday,
+            'phone' : phone
+        }
+        usersModel.add(user)
 
         # check if email already exist...
 

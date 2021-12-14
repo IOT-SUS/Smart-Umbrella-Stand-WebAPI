@@ -15,6 +15,7 @@ class usersModel():
         user['public_id']  = str(uuid.uuid4())[:8]
         user['created_at'] = now_time
         user['updated_at'] = now_time
+        user['admin']      = False
         mongo.db.users.insert_one(user)
     
     @staticmethod
@@ -36,3 +37,8 @@ class usersModel():
     def delete(user_id):
         mongo.db.users.delete_one({'public_id': user_id})   
 
+    @staticmethod
+    def find_user_by_email(email):
+        user = mongo.db.users.find({'email': email})[0]
+        print(user)
+        return user['public_id'] 

@@ -22,11 +22,10 @@ class auth():
             res.message = 'Login failed.'
             res.statusCode = 403
             return res
-
-        fake_user_id = 'ef8697123'
         
         # create json web token
-        token = jwt.createToken(user_id=fake_user_id)
+        user_id = usersModel.find_user_by_email(email)
+        token = jwt.createToken(user_id = user_id)
 
         # make response
         res.message = 'Login successfully.'

@@ -40,5 +40,6 @@ class usersModel():
     @staticmethod
     def find_user_by_email(email):
         user = mongo.db.users.find({'email': email})[0]
-        print(user)
         return user['public_id'] 
+
+#2021

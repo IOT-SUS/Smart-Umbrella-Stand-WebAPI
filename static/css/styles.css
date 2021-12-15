@@ -72,15 +72,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap');
 /* RE:songtien:1214 */
-/* 
-=============================================== */
+
+/* ============================================================================ */
+/* "                        FOR SIGNUP AND LOGIN FORM                         " */
+/* ============================================================================ */
 
 html {
-  background-color: #42476c;
+  background-color: #525674;
 }
 
 .wrapper.fadeInDown{
-  background-color: #42476c;
+  background-color: #525674;
 }
 
 a {
@@ -89,10 +91,6 @@ a {
   text-decoration: none;
   font-weight: 400;
 }
-
-
-
-
 
 /* STRUCTURE */
 
@@ -103,7 +101,9 @@ a {
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 6em;
+  padding-top: 6em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 #formContent {
@@ -120,6 +120,24 @@ a {
   text-align: center;
 }
 
+/* RE:songtien:1215:formemberuse */
+
+#formMember {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  width: 900px;
+  max-width: 90%;
+  position: relative;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
 #formFooter {
   background-color: #f6f6f6;
   border-top: 1px solid #dce8f1;
@@ -129,8 +147,6 @@ a {
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-
-
 
 /* TABS */
 
@@ -143,15 +159,14 @@ h2.active {
   border-bottom: 2px solid #42476c;
 }
 
-
-
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #42476c;
   border: none;
   color: white;
-  padding: 15px 80px;
+  padding: 1em 5em;
+  letter-spacing: 0.1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -170,7 +185,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #8389b6;
+  background-color: #9aa0c9;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -202,9 +217,12 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
+
+
 input[type=text]:focus {
   background-color: #fff;
   border-bottom: 2px solid #42476c;
+  color: #42476c;
 }
 
 input[type=text]:placeholder {
@@ -314,19 +332,18 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #42476c;
+  background-color: #c5ccf0;
   content: "";
   transition: width 0.2s;
 }
 
 .underlineHover:hover {
-  color: #0d0d0d;
+  color: #c5ccf0;
 }
 
 .underlineHover:hover:after{
   width: 100%;
 }
-
 
 
 /* OTHERS */
@@ -338,7 +355,153 @@ input[type=text]:placeholder {
 #icon {
   width:40%;
 }
-/* =============================================== */
+/* ============================================================================ */
+/* "                       FOR MEMBER INFOMATION FORM                         " */
+/* ============================================================================ */
+
+label-m {
+  display: flex;
+  position: relative;
+  margin: 2em 0px;
+}
+.label-txt {
+  position: absolute;
+  top: -2.5em;
+  padding: 1em;
+  font-size: .9em;
+  letter-spacing: 0.1em;
+  color: rgb(120,120,120);
+  transition: ease .3s;
+}
+/* .line-box {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #BCBCBC;
+} */
+
+mark.df {
+  background:linear-gradient(#fff 50%, #dfe5f7 48%,#dfe5f7 47%,#dfe5f7 68%, #dfe5f7 8%,#fff 71%);
+}
+
+input[type=text-member] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text-member]:focus {
+  background-color: #fff;
+  color: #42476c;
+  font-family: 'Arima Madurai', cursive;
+  /* border-bottom: 2px solid #42476c; */
+}
+
+.line {
+  position: absolute;
+  width: 0%;
+  max-width: 98%;
+  height: 2px;
+  top: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7d83b3;
+  transition: ease .6s;
+} 
+
+.input:focus + .line-box .line {
+  width: 100%;
+}
+
+.label-active {
+  top: -3em;
+}
+
+/* RE:songtien:1214:button may conflict */
+
+/* button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgb(220,220,220);
+  font-weight: bold;
+  color: rgb(120,120,120);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: ease .3s;
+}
+
+button:hover {
+  background: #8BC34A;
+  color: #ffffff;
+} */
+
+
+
+/* ============================================================================ */
+/* "                          FOR MAIN LANDING PAGE                           " */
+/* ============================================================================ */
+
+/* RE:songtien:1215 */
+
+input[type=button-home] {
+  background-color: #fff;
+  border: none;
+  color: #42476c;
+  padding: 1em 0.1em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
+  box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 20px;
+  margin: 30px 20px 30px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button-home]:hover{
+  background-color: #797d9f;
+  -webkit-box-shadow: 0 0 0 0;
+  color: #fff;
+}
+
+.myhomebutton {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+input[type=button-home]:active{
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -383,9 +546,12 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
+
+/* RE:songtien:1215 */
+
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -507,11 +673,11 @@ sup {
 }
 
 a {
-  color: #0d6efd;
-  text-decoration: underline;
+  color: #7d83b3;
+  text-decoration: none;
 }
 a:hover {
-  color: #42476c;
+  color: #abafd3;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -867,7 +1033,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -936,6 +1102,8 @@ progress {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
+
+  /* RE:songtien:1215:MainPage */
 }
 .row {
   --bs-gutter-x: 1.5rem;
@@ -1661,7 +1829,7 @@ progress {
 
   .col-lg-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 45%;
   }
 
   .col-lg-7 {
@@ -3742,7 +3910,7 @@ textarea.form-control-lg {
 
 .btn-link {
   font-weight: 400;
-  color: #42476c;
+  color: #8f96c5;
   text-decoration: underline;
 }
 .btn-link:hover {
@@ -7629,6 +7797,7 @@ textarea.form-control-lg {
 
 .mb-0 {
   margin-bottom: 0 !important;
+  line-height: 1.7em;
 }
 
 .mb-1 {
@@ -7644,8 +7813,10 @@ textarea.form-control-lg {
 }
 
 .mb-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 16rem !important;
 }
+
+/* RE:songtien:1215 */
 
 .mb-5 {
   margin-bottom: 3rem !important;
@@ -7768,9 +7939,11 @@ textarea.form-control-lg {
 /* RE:songtien:1214 */
 
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 4rem !important;
   padding-bottom: 3rem !important;
 }
+
+/* RE:songtien:1215 */
 
 .pt-0 {
   padding-top: 0 !important;

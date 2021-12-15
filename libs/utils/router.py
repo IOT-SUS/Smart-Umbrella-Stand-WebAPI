@@ -70,6 +70,5 @@ class router():
         def _controller():
             return render_template(template)
         # change endpoint name
-        print(template)
         _controller.__name__ = 'template_' + (template.split('.'))[0]
         app.route(url, methods=['GET'])(_controller)

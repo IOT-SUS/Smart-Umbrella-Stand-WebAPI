@@ -20,18 +20,18 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="http://127.0.0.1:5000/">Smart Umbrella Stand</a>
+            <a class="navbar-brand" href="{{ url_for('template_index') }}">Smart Umbrella Stand</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_index') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="http://127.0.0.1:5000/rent">Rent</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/member">Member</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/signup">Sign-up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/login">Login</a></li>
+                            href="{{ url_for('template_rent') }}">Rent</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_member') }}">Member</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_signupform') }}">Sign-up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_loginform') }}">Login</a></li>
                 </ul>
             </div>
         </div>

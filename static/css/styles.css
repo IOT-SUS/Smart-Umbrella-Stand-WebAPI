@@ -85,6 +85,11 @@ html {
   background-color: #525674;
 }
 
+.wrapper.rent.fadeInDown{
+  /* background-color: #c4c7df; */
+  background: linear-gradient(#fff 10%, #b4b7d5 100%);
+}
+
 a {
   color: #5c6396;
   display:inline-block;
@@ -104,6 +109,7 @@ a {
   padding-top: 6em;
   padding-left: 1em;
   padding-right: 1em;
+  padding-bottom: 6em
 }
 
 #formContent {
@@ -115,6 +121,122 @@ a {
   max-width: 450px;
   position: relative;
   padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* ============================================================================ */
+/* "                        FOR RENT AND DEVICE PAGE                          " */
+/* ============================================================================ */
+
+/* RE:songtien:1215:forrentuse */
+
+
+input[type=button-rent] {
+  background-color: #fff;
+  border: none;
+  color: #42476c;
+  padding: 1em 2em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  max-width: 80%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
+  box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 20px;
+  margin: 10px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button-rent]:hover{
+  background-color: #797d9f;
+  -webkit-box-shadow: 0 0 0 0;
+  color: #fff;
+}
+
+.myhomebutton {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+input[type=button-rent]:active{
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+
+input[type=text-device] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text-device]:focus {
+  background-color: #fff;
+  color: #42476c;
+  font-family: 'Arima Madurai', cursive;
+  /* border-bottom: 2px solid #42476c; */
+}
+
+
+#formDevice {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  /* display: none; */
+}
+
+#formRent {
+  display: none;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
@@ -471,6 +593,7 @@ input[type=button-home] {
   display: inline-block;
   text-transform: uppercase;
   font-size: 16px;
+  max-width: 80%;
   -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
   box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
   -webkit-border-radius: 5px 5px 5px 5px;

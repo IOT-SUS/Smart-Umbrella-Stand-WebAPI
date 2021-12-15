@@ -5,3 +5,18 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+
+// $("#btn_001.fadeIn.fourth").click(function () {
+//     $("#formRent").show();
+//     $("#formDevice").hide();
+//   });
+
+// $("#btn_001").OnClick(function () {
+//     $("#formRent").show();
+//     $("#formDevice").hide();
+//   });
+function functionNext() {
+    document.getElementById("formDevice").style.display = "none";
+    document.getElementById("formRent").style.display = "block";  
+}

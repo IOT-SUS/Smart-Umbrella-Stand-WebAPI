@@ -12,6 +12,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+        <!-- ========================== -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="{{ url_for('static', filename='js/lib/loginform.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+        <!-- ========================== -->
+    
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -22,8 +28,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('template_index') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('template_rent') }}">Rent</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('template_member') }}">Member</a></li>
+                        <li class="nav-item" id="rent_item"><a class="nav-link" href="{{ url_for('template_rent') }}">Rent</a></li>
+                        <li class="nav-item" id="member_item"><a class="nav-link" href="{{ url_for('template_member') }}">Member</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('template_signupform') }}">Sign-up</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_loginform') }}">Login</a></li>
                     </ul>
@@ -44,7 +50,7 @@
               <form>
                 <input type="text" id="email" class="fadeIn second" name="login" placeholder="email">
                 <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <input type="button" id="login_button" class="fadeIn fourth" value="Log In">
               </form>
           
               <!-- Remind Passowrd -->
@@ -54,8 +60,5 @@
           
             </div>
           </div>
-
-          <!-- ========================== -->
-                  <!-- ========================== -->
     </body>
 </html>

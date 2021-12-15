@@ -20,7 +20,7 @@ class usersModel():
     
     @staticmethod
     def find(user_id):
-        return list(mongo.db.users.find({'public_id': user_id}))
+        return list(mongo.db.users.find({'public_id': user_id}))[0]
 
     @staticmethod
     def login(email, password):

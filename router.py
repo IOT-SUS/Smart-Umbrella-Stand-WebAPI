@@ -21,6 +21,7 @@ router.render_page(url='/rent',   template='rent.html')
 router.render_page(url='/member', template='member.html')
 router.render_page(url='/signup', template='signupform.html')
 router.render_page(url='/login',  template='loginform.html')
+router.render_page(url='/test',   template='test.html')
 
 
 # ============================================================================

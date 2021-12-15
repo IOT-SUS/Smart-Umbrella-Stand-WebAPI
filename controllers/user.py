@@ -11,6 +11,7 @@ class user():
 
         # search user
         user = usersModel.find(user_id)
+        del user['_id']
 
         # make response
         res.message = 'Get user information successfully.'

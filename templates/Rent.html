@@ -14,24 +14,27 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <!-- ========================== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+    <!-- ========================== -->
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('template_index') }}">Smart Umbrella Stand</a>
+            <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="{{ url_for('template_rent') }}">Rent</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_member') }}">Member</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_signupform') }}">Sign-up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('template_loginform') }}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item" id="rent_item"><a class="nav-link" href="/rent">Rent</a></li>
+                    <li class="nav-item" id="member_item"><a class="nav-link" href="/member">Member</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -104,7 +107,7 @@
 /* ============================================================================ */ 
 -->
 
-                <a href="http://127.0.0.1:5000/"><input type="button-rent" class="fadeIn third"
+                <a href="/"><input type="button-rent" class="fadeIn third"
                         value="Rent Now"></a>
             </form>
         </div>
@@ -116,7 +119,7 @@
 /* ============================================================================ */ 
 -->
 
-    <script src="http://127.0.0.1:5000/static/js/scripts.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
 

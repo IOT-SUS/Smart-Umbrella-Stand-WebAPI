@@ -15,21 +15,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="https:/cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-        
+        <!-- ========================== -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/lib/member.js') }}"></script>
+        <!-- ========================== -->
     </head>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container">
-              <a class="navbar-brand" href="{{ url_for('template_index') }}">Smart Umbrella Stand</a>
+              <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li class="nav-item"><a class="nav-link" href="{{ url_for('template_index') }}">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ url_for('template_rent') }}">Rent</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ url_for('template_member') }}">Member</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ url_for('template_signupform') }}">Sign-up</a></li>
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('template_loginform') }}">Login</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                      <li class="nav-item" id="rent_item"><a class="nav-link" href="/rent">Rent</a></li>
+                      <li class="nav-item" id="member_item"><a class="nav-link" href="/member">Member</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Login</a></li>
                   </ul>
               </div>
           </div>
@@ -44,42 +48,42 @@
 
             <label-m>
               <p class="label-txt fadeIn first">EMAIL</p>
-              <input type="text-member" class="input fadeIn second" name="email">
+              <input type="text-member" class="input fadeIn second" name="email" id="email">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label-m>
             <label-m>
               <p class="label-txt fadeIn first">NAME</p>
-              <input type="text-member" class="input fadeIn second" name="name">
+              <input type="text-member" class="input fadeIn second" name="name" id="name">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label-m>
             <label-m>
               <p class="label-txt fadeIn second">PHONE</p>
-              <input type="text-member" class="input fadeIn third" name="phone">
+              <input type="text-member" class="input fadeIn third" name="phone" id="phone">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label-m>
             <label-m>
               <p class="label-txt fadeIn second">BIRTHDAY</p>
-              <input type="text-member" class="input fadeIn third" name="birthday">
+              <input type="text-member" class="input fadeIn third" name="birthday" id="birthday">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label-m>
             <label-m>
               <p class="label-txt fadeIn third">SUBSCRIBED</p>
-              <input type="text-member" class="input fadeIn fourth" name="subscribed">
+              <input type="text-member" class="input fadeIn fourth" name="subscribed" id="subscribed">
               <div class="line-box">
                 <div class="line"></div>
               </div>
             </label-m>
             <label-m>
               <p class="label-txt fadeIn third">ADMIN</p>
-              <input type="text-member" class="input fadeIn fourth" name="admin">
+              <input type="text-member" class="input fadeIn fourth" name="admin" id="admin">
               <div class="line-box">
                 <div class="line"></div>
               </div>
@@ -89,7 +93,7 @@
         </div>>
       </div>
           <!-- ========================== -->
-                  <!-- ========================== -->
+          <!-- ========================== -->
         
     </body>
 </html>

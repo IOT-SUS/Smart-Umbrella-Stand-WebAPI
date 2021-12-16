@@ -23,14 +23,3 @@ class auth {
         document.getElementById("password").value = '';
     }
 }
-
-
-
-const data = {
-    'name'    : '阿麵',
-    'email'   : 'amian@gmail.com',
-    'phone'   : '123456789',
-    'birthday': '1999/06/07',
-    'password': '12345'
-};
-

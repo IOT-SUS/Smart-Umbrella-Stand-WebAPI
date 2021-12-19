@@ -1,4 +1,6 @@
 import re
+
+from pymongo.common import partition_node
 from app import app
 from models.devices import devicesModel
 from models.rents import rentsModel
@@ -28,12 +30,13 @@ class ureturn():
     def returnUmbre(req, res):
         # get url variable
         device_id   = req.url_variable['device_id']
-
+        print(device_id)
         # get request data
         data = req.get_json()
-        umbrella_id = data['umbrella_id']
-
-        umbrellasModel.update(umbrella_id, {"status_id" : device_id})
+        print(data)
+        rfid = data['rfid']
+        #print(umbrella_id)
+        umbrellasModel.update(rfid, {"status_id" : device_id})
 
         # make response
         res.message = 'Check device umbrella return successfully.'

@@ -1,6 +1,6 @@
 from app import app
 from models.devices import devicesModel
-
+from models.umbrellas import umbrellasModel
 
 class device():
     @staticmethod
@@ -22,11 +22,14 @@ class device():
         """device information"""
         # get url variable
         device_id = req.url_variable['device_id']
-        
+       
         # search deviec information
         device = devicesModel.find(device_id)
         del device['_id']
-
+ 
+        amount = umbrellasModel.checkAmount(device_id)
+        device['amount'] = amount
+ 
         # make response
         res.message = 'Get devices information successfully.'
         res.data    = device

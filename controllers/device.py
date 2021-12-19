@@ -1,6 +1,8 @@
 from os import device_encoding
 from app import app
 from models.devices import devicesModel
+from models.umbrellas import umbrellasModel
+
 
 class device():
     @staticmethod
@@ -32,6 +34,21 @@ class device():
         res.data    = device
         return res
         
+    @staticmethod
+    def amount(req, res):
+        """device information"""
+        # get url variable
+        device_id = req.url_variable['device_id']
+        
+        # search deviec information
+        amount = umbrellasModel.checkAmount(device_id)
+
+        # make response
+        res.message = 'Get devices information successfully.'
+        res.data    = amount
+        return res
+
+
     @staticmethod
     def add(req, res):
         """add new device"""

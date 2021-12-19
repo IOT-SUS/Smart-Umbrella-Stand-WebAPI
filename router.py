@@ -29,28 +29,33 @@ router.render_page(url='/login',  template='loginform.html')
 # ============================================================================
 
 # Auth api
-router.post(url='/api/auth/login',  controller=auth.login)
+router.post(url='/api/auth/login' , controller=auth.login)
 router.post(url='/api/auth/signup', controller=auth.signup)
 
 # User api
-router.get(url='/api/user', authentication=authentication, controller=user.info)
+router.get(url='/api/user'        , authentication=authentication, controller=user.info)
 router.post(url='/api/user/update', authentication=authentication, controller=user.update)
 router.post(url='/api/user/delete', authentication=authentication, controller=user.delete)
 
 # Device route
-router.get(url='/api/devices',                      controller=device.infos)
-router.get(url='/api/device/<device_id>',           controller=device.info)
-router.post(url='/api/device/add',                  controller=device.add)
+router.get(url='/api/devices'                   ,   controller=device.infos)
+router.get(url='/api/device/<device_id>'        ,   controller=device.info)
+router.post(url='/api/device/add'               ,   controller=device.add)
 router.post(url='/api/device/update/<device_id>',   controller=device.update)
 router.post(url='/api/device/delete/<device_id>',   controller=device.delete)
 
 # Rent api
-router.get(url='/api/device/<device_id>/rent', controller=urent.checkAvailable)
-router.post(url='/api/device/<device_id>/rent', controller=urent.checkAvailable) # not yet
+router.get(url='/api/device/<device_id>/rent' , controller=urent.checkAvailable)
+router.post(url='/api/device/<device_id>/rent', controller=urent.rentUmbrella)
 
 # Return api
-router.get(url='/api/device/<device_id>/return',  controller=ureturn.checkVacancy)
+router.get(url='/api/device/<device_id>/return' , controller=ureturn.checkVacancy)
 router.post(url='/api/device/<device_id>/return', controller=ureturn.returnUmbrella)
 
 # Umbrella api
 router.post(url='/api/umbrella/add', controller=umbrella.add)
+
+# Renting api
+router.get(url='/api/ing/device/<device_id>/polling' , controller=urent.device_polling)
+router.get(url='/api/ing/user/<user_id>/polling'     , controller=urent.user_polling)
+#router.post(url='/api/ing/<device_id>/renting', controller=urent.renting)

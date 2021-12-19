@@ -1,4 +1,3 @@
-from os import device_encoding
 from app import app
 from models.devices import devicesModel
 
@@ -25,7 +24,7 @@ class device():
         
         # search deviec information
         device = devicesModel.find(device_id)
-        del device[0]['_id']
+        del device['_id']
 
         # make response
         res.message = 'Get devices information successfully.'

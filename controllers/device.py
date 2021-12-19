@@ -11,7 +11,9 @@ class device():
         devices = devicesModel.find_all()
         for s in range(len(devices)):
             del devices[s]['_id']
-
+            amount = umbrellasModel.checkAmount(devices[s]['public_id'])
+            devices[s]['amount'] = amount
+            
         # make response
         res.message = 'Get devices information successfully.'
         res.data    = devices

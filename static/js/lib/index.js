@@ -2,12 +2,10 @@ import { getJwtToken } from './utils.js';
 import { userApi }     from './api/user.js';
 
 window.onload = () => {
-    document.getElementById("rent_item").style.display   = "none"
-    document.getElementById("member_item").style.display = "none"
     index.checkLogined();
 };
 
-class index {
+export class index {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');
         userApi.info(jwtToken, index.checkLoginedSuccess, index.checkLoginedFaild);

@@ -1,6 +1,7 @@
 from app import app
 from models.devices import devicesModel
 
+
 class device():
     @staticmethod
     def infos(req, res):

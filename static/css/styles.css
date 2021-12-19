@@ -197,6 +197,7 @@ input[type=text-device] {
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
+  letter-spacing: 0.05em;
 }
 
 input[type=text-device]:focus {

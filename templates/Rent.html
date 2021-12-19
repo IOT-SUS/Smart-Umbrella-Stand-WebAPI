@@ -7,8 +7,6 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Smart Umbrella Stand</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap"
         rel="stylesheet" type="text/css" />
@@ -57,11 +55,11 @@
             </div>
 
             <div class="fadeIn second">
-                <h2>Enter Device ID<br></h2>
+                <h2>Enter Umbrella Stand ID<br></h2>
             </div>
             <!-- Rental Form -->
             <form>
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="device id">
+                <input type="text" id="input_device_id" class="fadeIn third" name="input_device_id" placeholder="umbrella stand id">
                 <br><br>
                 <input type="button-rent" id="btn_001" class="fadeIn fourth" value="Next" onclick="functionNext()">
             </form>
@@ -90,16 +88,16 @@
             <!-- Rental Form -->
             <form>
                 <label-m>
-                    <p class="label-txt fadeIn second">DEVICE ID</p>
-                    <input type="text-device" class="input fadeIn second" name="id">
+                    <p class="label-txt fadeIn second">UMBRELLA STAND ID</p>
+                    <input type="text-device" id="device_id" class="input fadeIn second" name="id">
                 </label-m>
                 <label-m>
                     <p class="label-txt fadeIn second">LOCATION</p>
-                    <input type="text-device" class="input fadeIn second" name="location">
+                    <input type="text-device" id="location" class="input fadeIn second" name="location">
                 </label-m>
                 <label-m>
-                    <p class="label-txt fadeIn second">AMOUNT</p>
-                    <input type="text-device" class="input fadeIn third" name="amount">
+                    <p class="label-txt fadeIn second">AVAILABLE NOW</p>
+                    <input type="text-device" id="amount" class="input fadeIn third" name="amount">
                 </label-m>
 
                         <!-- 

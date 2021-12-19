@@ -30,10 +30,10 @@ class umbrellasModel():
         return umbrellasModel.umbrellas
 
     @staticmethod
-    def update(status_id, update_query):
+    def update(rfid, update_query):
         now_time = datetime.now().isoformat()
         update_query['updated_at'] = now_time
-        mongo.db.umbrellas.update_one({'status_id': status_id}, {'$set': update_query})
+        mongo.db.umbrellas.update_one({'rfid': rfid}, {'$set': update_query})
     
     @staticmethod
     def delete(umbrella_id):

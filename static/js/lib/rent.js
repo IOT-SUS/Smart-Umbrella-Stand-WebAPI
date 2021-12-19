@@ -1,17 +1,9 @@
-import { getJwtToken } from './utils.js';
 import { deviceApi }   from './api/device.js';
-import { index }       from './index.js';
-
-// window.onload = () => {
-//     index.checkLogined();
-//     rent.checkInfos();
-// };
 
 var nextButton = document.getElementById("btn_next");
 nextButton.onclick = () => {
     document.getElementById("formDevice").style.display = "none";
-    document.getElementById("formRent").style.display = "block";  
-    index.checkLogined();
+    document.getElementById("formRent").style.display   = "block";
     rent.checkInfos();
 }
 
@@ -34,7 +26,6 @@ export class rent {
 
     static checkInfosSuccess(res) {
         console.log(res);
-        index.checkLoginedSuccess(res);
         document.getElementById("device_id").value  = res.data.public_id;
         document.getElementById("location").value   = res.data.location;
         document.getElementById("amount").value     = res.data.amount;
@@ -45,7 +36,8 @@ export class rent {
     }
 
     static checkInfosFailed(err) {
-        // location.href = '/login';
+        alert("Oops! Wrong device id. Click the confirm button and go back to our Rent Page.")
+        location.href = '/rent';
         console.log(err);
     }
 }

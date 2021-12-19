@@ -2,10 +2,6 @@ import { getJwtToken } from './utils.js';
 import { userApi }     from './api/user.js';
 import { index }       from './index.js';
 
-window.onload = () => {
-    member.checkLogined();
-};
-
 export class member {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');

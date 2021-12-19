@@ -1,5 +1,6 @@
 from app import app
 from models.devices import devicesModel
+from models.umbrellas import umbrellasModel
 
 class urent():
     @staticmethod
@@ -9,10 +10,10 @@ class urent():
         device_id = req.url_variable['device_id']
         
         # search device by id
-        fake_device = devicesModel.find(device_id)
-
+        umbrella_amount = umbrellasModel.checkAmount(device_id)   
+        
         # check amount
-        available = True if fake_device['amount'] > 0 else False
+        available = True if umbrella_amount > 0 else False
 
         # make response
         res.message = 'Check device umbrella rent successfully.'
@@ -20,3 +21,5 @@ class urent():
             'available' : available
         }
         return res
+
+    

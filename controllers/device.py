@@ -1,14 +1,14 @@
 from os import device_encoding
 from app import app
 from models.devices import devicesModel
- 
+
 class device():
     @staticmethod
     def infos(req, res):
         """devices information"""
         # search all deviecs information
         fake_devices = devicesModel.find_all()
- 
+
         # make response
         res.message = 'Get devices information successfully.'
         res.data    = fake_devices
@@ -19,7 +19,7 @@ class device():
         """device information"""
         # get url variable
         device_id = req.url_variable['device_id']
-       
+        
         # search deviec information
         fake_device = devicesModel.find(device_id)
  
@@ -27,7 +27,7 @@ class device():
         res.message = 'Get devices information successfully.'
         res.data    = fake_device
         return res
- 
+        
     @staticmethod
     def add(req, res):
         """add new device"""
@@ -36,7 +36,7 @@ class device():
        
         location       = data['location']
         embedded_code  = data['embedded_code']
- 
+
         if devicesModel.find_by_loc(location) :
             # make error response
             res.message = 'error: duplicate device.'
@@ -84,7 +84,3 @@ class device():
         # make response
         res.message = 'Delete device successfully.'
         return res
- 
-   
-   
-

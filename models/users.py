@@ -41,5 +41,3 @@ class usersModel():
     def find_user_by_email(email):
         user = mongo.db.users.find({'email': email})[0]
         return user['public_id'] 
-
-#2021

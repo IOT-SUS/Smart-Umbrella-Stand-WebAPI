@@ -36,7 +36,6 @@ class user():
             'phone' : phone
         }
 
-
         usersModel.update(user_id, updating)
 
         # make response

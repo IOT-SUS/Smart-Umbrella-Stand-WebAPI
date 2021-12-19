@@ -91,8 +91,12 @@
           </form>
         </div>>
       </div>
-          <!-- ========================== -->
-          <!-- ========================== -->
-        
+    <script type="module">
+        import { member }   from '../static/js/lib/member.js';
+
+        window.onload = () => {
+          member.checkLogined();
+        };
+    </script>
     </body>
 </html>

@@ -119,6 +119,13 @@
 -->
 
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script type="module">
+        import { index, device }   from '../static/js/lib/index.js';
+
+        window.onload = () => {
+            index.checkLogined();
+        };
+    </script>
 </body>
 </html>
 

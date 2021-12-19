@@ -7,11 +7,13 @@ class device():
     def infos(req, res):
         """devices information"""
         # search all deviecs information
-        fake_devices = devicesModel.find_all()
- 
+        devices = devicesModel.find_all()
+        for s in range(len(devices)):
+            del devices[s]['_id']
+
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_devices
+        res.data    = devices
         return res
  
     @staticmethod
@@ -21,11 +23,12 @@ class device():
         device_id = req.url_variable['device_id']
        
         # search deviec information
-        fake_device = devicesModel.find(device_id)
- 
+        device = devicesModel.find(device_id)
+        del device[0]['_id']
+
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_device
+        res.data    = device
         return res
  
     @staticmethod
@@ -58,7 +61,7 @@ class device():
     def update(req, res):
         """update device information"""
         # get token device id
-        device_id = req.device_id
+        device_id = req.url_variable['device_id']
         data = req.get_json()
  
         location        = data['location']
@@ -77,7 +80,7 @@ class device():
     def delete(req, res):
         """user information"""
         # get token device id
-        device_id = req.device_id
+        device_id = req.url_variable['device_id']
  
         devicesModel.delete(device_id)
  

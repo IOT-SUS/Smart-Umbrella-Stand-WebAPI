@@ -39,6 +39,9 @@ router.post(url='/api/user/delete', authentication=authentication, controller=us
 # Device route
 router.get(url='/api/devices',            controller=device.infos)
 router.get(url='/api/device/<device_id>', controller=device.info)
+router.post(url='/api/device/add',         controller=device.add)
+router.post(url='/api/device/update/<device_id>',         controller=device.update)
+router.get(url='/api/device/delete/<device_id>',         controller=device.delete)
 
 # Rent api
 router.get(url='/api/device/<device_id>/rent', controller=urent.checkAvailable)

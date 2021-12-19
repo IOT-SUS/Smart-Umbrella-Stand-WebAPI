@@ -28,7 +28,7 @@ class devicesModel():
  
     @staticmethod
     def find_all():
-        return devicesModel.devices
+        return list(mongo.db.devices.find({}))
  
     @staticmethod
     def update(device_id, update_query):

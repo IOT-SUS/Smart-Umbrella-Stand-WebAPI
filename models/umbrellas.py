@@ -1,3 +1,4 @@
+from re import A
 import uuid
 from app import app
 from app import mongo
@@ -9,12 +10,16 @@ bcrypt = Bcrypt(app)
 class umbrellasModel():
 
     @staticmethod
-    def add(umbrella):
+    def add(rfid):
+        umbrella = {}
         now_time = datetime.now().isoformat()
         umbrella['public_id']  = str(uuid.uuid4())[:8]
         umbrella['created_at'] = now_time
         umbrella['updated_at'] = now_time
+        umbrella['status_id']  = None
+        umbrella['rfid']       = rfid
         mongo.db.umbrellas.insert_one(umbrella)
+        return umbrella['public_id']
         
     @staticmethod
     def find(umbrella_id):
@@ -25,13 +30,17 @@ class umbrellasModel():
         return umbrellasModel.umbrellas
 
     @staticmethod
-    def update(umbrella_id, update_query):
+    def update(status_id, update_query):
         now_time = datetime.now().isoformat()
         update_query['updated_at'] = now_time
-        mongo.db.umbrellas.update_one({'public_id': umbrella_id}, {'$set': update_query})
+        mongo.db.umbrellas.update_one({'status_id': status_id}, {'$set': update_query})
     
     @staticmethod
     def delete(umbrella_id):
         mongo.db.umbrellas.delete_one({'public_id': umbrella_id})
 
-
+    @staticmethod
+    def checkAmount(device_id):
+        temp = list(mongo.db.umbrellas.find({'status_id': device_id}))
+        return len(temp)
+            

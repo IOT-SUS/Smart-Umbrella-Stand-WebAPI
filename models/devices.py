@@ -18,13 +18,12 @@ class devicesModel():
        
     @staticmethod
     def find(device_id):
-        return list(mongo.db.devices.find({'public_id': device_id}))
+        return list(mongo.db.devices.find({'public_id': device_id}))[0]
  
     #find by locaiotn
     @staticmethod
     def find_by_loc(location):
         return list(mongo.db.devices.find({'location': location}))
- 
  
     @staticmethod
     def find_all():
@@ -37,7 +36,3 @@ class devicesModel():
     @staticmethod
     def delete(device_id):
         mongo.db.devices.delete_one({'public_id': device_id})
- 
- 
- 
-

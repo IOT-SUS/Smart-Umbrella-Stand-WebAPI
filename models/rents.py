@@ -23,7 +23,7 @@ class rentsModel():
 
     @staticmethod
     def find_all():
-        return rentsModel.rents
+        return list(mongo.db.rents.find({}))
 
     @staticmethod
     def update(rent_id, update_query):

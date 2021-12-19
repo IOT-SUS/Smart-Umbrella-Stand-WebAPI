@@ -7,7 +7,7 @@ import { index }       from './index.js';
 //     rent.checkInfos();
 // };
 
-var nextButton = document.getElementById("btn_001");
+var nextButton = document.getElementById("btn_next");
 nextButton.onclick = () => {
     document.getElementById("formDevice").style.display = "none";
     document.getElementById("formRent").style.display = "block";  
@@ -38,6 +38,10 @@ export class rent {
         document.getElementById("device_id").value  = res.data.public_id;
         document.getElementById("location").value   = res.data.location;
         document.getElementById("amount").value     = res.data.amount;
+        if (res.data.amount == 0) {
+            alert("Oops! There is no umbrella available here now. Click the confirm button and go back to our Home Page.")
+            location.href = '/';
+        }
     }
 
     static checkInfosFailed(err) {

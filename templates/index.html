@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=0.1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Smart Umbrella Stand</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-        <!-- ========================== -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
-        <!-- ========================== -->
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                        <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
-                        <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Header - set the background image for the header in the line below-->
-        <header class="py-5 bg-image-full fadeInDown" style="background-image: url('https://images.plurk.com/16l3TukgY6FI71lTOSSvAS.png')"> 
-            <!-- RE:songtien:1214 -->
-            <div class="text-center my-5">
-                <img class="img-fluid rounded-circle mb-4" src="https://images.plurk.com/4Lny202EtQjBtApbyxC3W5.png" alt="..." />
-                <!-- <h1 class="text-white fs-3 fw-bolder"></h1>
-                <p class="text-white-50 mb-0"></p> -->
-                <!-- RE:songtien:1214 -->                
-            </div>
-        </header>
-        <!-- Content section-->
-        <section class="py-5">
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h1>Smart Umbrella Stand</h1>
-                        <h2>Convenience & great experience</h2>
-                        <div class="myhomebutton"><a href="/signup"><input type="button-home" class="fadeIn fixth" value="Sign Up"></a></div>
-                        <p class="lead">Allows you to rent an umbrella at any time anywhere</p>
-                        <p class="mb-0">Do you always encounter the situation of not bringing an umbrella on a rainy day? Subscribe to our service, our umbrella rental system can help you get rid of this trouble from now and then.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Image element - set the background image for the header in the line below-->
 
-        <!-- <div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800')"> -->
-            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-            <!-- <div style="height: 20rem"></div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Smart Umbrella Stand</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <!-- ========================== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+    <!-- ========================== -->
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                    <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a>
+                    </li>
+                    <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link"
+                            href="/member">Member</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header - set the background image for the header in the line below-->
+    <header class="py-5 bg-image-full fadeInDown"
+        style="background-image: url('https://images.plurk.com/16l3TukgY6FI71lTOSSvAS.png')">
+        <!-- RE:songtien:1214 -->
+        <div class="text-center my-5">
+            <img class="img-fluid rounded-circle mb-4" src="https://images.plurk.com/4Lny202EtQjBtApbyxC3W5.png"
+                alt="..." />
+            <!-- <h1 class="text-white fs-3 fw-bolder"></h1>
+                <p class="text-white-50 mb-0"></p> -->
+            <!-- RE:songtien:1214 -->
+        </div>
+    </header>
+    <!-- Content section-->
+    <section class="py-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h1>Smart Umbrella Stand</h1>
+                    <h2>Convenience & great experience</h2>
+                    <div class="myhomebutton"><a href="/signup"><input type="button-home" class="fadeIn fixth"
+                                value="Sign Up"></a></div>
+                    <p class="lead">Allows you to rent an umbrella at any time anywhere</p>
+                    <p class="mb-0">Do you always encounter the situation of not bringing an umbrella on a rainy day?
+                        Subscribe to our service, our umbrella rental system can help you get rid of this trouble from
+                        now and then.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Image element - set the background image for the header in the line below-->
+
+    <!-- <div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800')"> -->
+    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+    <!-- <div style="height: 20rem"></div>
         </div> -->
-        
-        <!-- Content section-->
-        <iframe src="https://reurl.cc/6D1NkM" width=100% height="450" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
-        
-        <!-- <section class="py-5">
+
+    <!-- traditional map from google embedded -->
+    <!-- <iframe src="https://reurl.cc/6D1NkM" width=100% height="450" style="border:0;" allowfullscreen="true"
+        loading="lazy"></iframe> -->
+
+    <!-- <section class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -80,13 +93,36 @@
             </div>
         </section> -->
 
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; IOT-SUS 2021</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    </body>
+    <!-- 
+/* ============================================================================ */
+/* "                      TRYING TO DRAW A GOOGLE MAP                         " */
+/* ============================================================================ */ 
+-->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script> -->
+
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o">
+    </script> -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o&callback=initMap"></script>
+
+
+        <div id="map" class="py-5 bg-image-full fadeInDown"></div>
+
+
+
+
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; IOT-SUS 2021</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
 </html>

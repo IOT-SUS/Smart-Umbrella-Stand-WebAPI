@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [25.008122, 121.535976]
+        },
+        "properties": {
+          "id": 1,
+          "name": "SUS - 師大分部站點",
+          "site": "116台北市文山區汀州路四段88號"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates":[25.0261704,121.5253597]
+        },
+        "properties": {
+          "id": 2,
+          "name": "SUS - 師大本部站點",
+          "site": "106台北市大安區和平東路一段162號"
+        }
+      }
+    ]
+  }

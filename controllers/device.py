@@ -1,3 +1,4 @@
+from pymongo.common import partition_node
 from app import app
 from models.devices import devicesModel
 from models.umbrellas import umbrellasModel
@@ -68,8 +69,13 @@ class device():
         """update device information"""
         # get token device id
         device_id = req.url_variable['device_id']
+        
+        # not done yet, this is for future work
+        test = devicesModel.find(device_id)
+
+        # get request data
         data = req.get_json()
- 
+        
         location        = data['location']
         embedded_code   = data['embedded_code']
         updating = {

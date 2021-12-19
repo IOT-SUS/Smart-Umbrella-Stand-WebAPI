@@ -42,14 +42,15 @@ router.get(url='/api/devices',                      controller=device.infos)
 router.get(url='/api/device/<device_id>',           controller=device.info)
 router.post(url='/api/device/add',                  controller=device.add)
 router.post(url='/api/device/update/<device_id>',   controller=device.update)
-router.post(url='/api/device/delete/<device_id>',    controller=device.delete)
+router.post(url='/api/device/delete/<device_id>',   controller=device.delete)
 
 # Rent api
 router.get(url='/api/device/<device_id>/rent', controller=urent.checkAvailable)
+router.post(url='/api/device/<device_id>/rent', controller=urent.checkAvailable) # not yet
 
 # Return api
-router.get(url='/api/device/<device_id>/return',  controller=ureturn.checkAvailable)
-router.post(url='/api/device/<device_id>/return', controller=ureturn.returnUmbre)
+router.get(url='/api/device/<device_id>/return',  controller=ureturn.checkVacancy)
+router.post(url='/api/device/<device_id>/return', controller=ureturn.returnUmbrella)
 
 # Umbrella api
 router.post(url='/api/umbrella/add', controller=umbrella.add)

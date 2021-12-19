@@ -1,12 +1,11 @@
 import { getJwtToken } from './utils.js';
 import { userApi }     from './api/user.js';
-import { index }       from './index.js';
 
 window.onload = () => {
     member.checkLogined();
 };
 
-export class member {
+class member {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');
         userApi.info(jwtToken, member.checkLoginedSuccess, member.checkLoginedFaild);
@@ -14,7 +13,6 @@ export class member {
 
     static checkLoginedSuccess(res) {
         console.log(res);
-        index.checkLoginedSuccess(res);
         document.getElementById("email").value      = res.data.email;
         document.getElementById("name").value       = res.data.name;
         document.getElementById("phone").value      = res.data.phone;
@@ -24,7 +22,26 @@ export class member {
     }
 
     static checkLoginedFaild(err) {
-        index.checkLoginedFaild(err);
         location.href = '/login';
+    } 
+}
+
+/* ============================================================================ */
+/* "                           TRYING TO LOG OUT                              " */
+/* ============================================================================ */ 
+
+document.getElementById("logout_button").onclick = () => logout.deleteAllCookies();
+
+class logout {
+    static deleteAllCookies() {
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+        window.location.href='/';
     }
 }
+

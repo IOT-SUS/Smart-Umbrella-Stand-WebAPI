@@ -5,11 +5,12 @@ from libs.utils.router import router
 from middlewares.authentication      import authentication
 from middlewares.adminAuthentication import adminAuthentication
 
-from controllers.auth    import auth
-from controllers.user    import user
-from controllers.device  import device
-from controllers.urent   import urent
-from controllers.ureturn import ureturn
+from controllers.auth     import auth
+from controllers.user     import user
+from controllers.device   import device
+from controllers.urent    import urent
+from controllers.ureturn  import ureturn
+from controllers.umbrella import umbrella
 
 # ============================================================================
 # "                         FRONTEND HTML PAGE                               "

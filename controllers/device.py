@@ -8,7 +8,9 @@ class device():
         """devices information"""
         # search all deviecs information
         fake_devices = devicesModel.find_all()
- 
+        for s in range(len(fake_devices)):
+            del fake_devices[s]['_id']
+
         # make response
         res.message = 'Get devices information successfully.'
         res.data    = fake_devices
@@ -22,7 +24,8 @@ class device():
        
         # search deviec information
         fake_device = devicesModel.find(device_id)
- 
+        del fake_device[0]['_id']
+
         # make response
         res.message = 'Get devices information successfully.'
         res.data    = fake_device
@@ -58,7 +61,7 @@ class device():
     def update(req, res):
         """update device information"""
         # get token device id
-        device_id = req.device_id
+        device_id = req.url_variable['device_id']
         data = req.get_json()
  
         location        = data['location']
@@ -77,7 +80,7 @@ class device():
     def delete(req, res):
         """user information"""
         # get token device id
-        device_id = req.device_id
+        device_id = req.url_variable['device_id']
  
         devicesModel.delete(device_id)
  

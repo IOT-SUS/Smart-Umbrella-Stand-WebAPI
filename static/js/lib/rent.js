@@ -15,11 +15,11 @@ export class rent {
 
         const data = {
             'location'      : ':D',
-            'embedded_code' : ':3'
+            'embedded_code' : ['123', '456']
         };
 
-        deviceApi.add(data, rent.checkInfosSuccess, rent.checkInfosFaild);
-        deviceApi.delete('e6fe9df5', rent.checkInfosSuccess, rent.checkInfosFaild);
+        // deviceApi.add(data, rent.checkInfosSuccess, rent.checkInfosFaild);
+        // deviceApi.delete('e6fe9df5', rent.checkInfosSuccess, rent.checkInfosFaild);
     }
 
     static checkInfosSuccess(res) {

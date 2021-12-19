@@ -2,7 +2,7 @@ import { authApi } from './api/auth.js';
 
 document.getElementById("signup_button").onclick = () => auth.signup();
 
-class auth {
+export class auth {
     static signup() {
         const email    = document.getElementById("email").value;
         const password = document.getElementById("password").value;

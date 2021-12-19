@@ -2,7 +2,7 @@ import { authApi } from './api/auth.js';
 
 document.getElementById("login_button").onclick = () => auth.login();
 
-class auth {
+export class auth {
     static login() {
         const email    = document.getElementById("email").value;
         const password = document.getElementById("password").value;

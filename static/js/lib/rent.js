@@ -9,10 +9,17 @@ window.onload = () => {
 
 export class rent {
     static checkInfos() {
-        //testing...
+        // testing...
         deviceApi.infos(rent.checkInfosSuccess, rent.checkInfosFaild);
         deviceApi.info('1742a5c2', rent.checkInfosSuccess, rent.checkInfosFaild);
-        
+
+        const data = {
+            'location'      : ':D',
+            'embedded_code' : ':3'
+        };
+
+        deviceApi.add(data, rent.checkInfosSuccess, rent.checkInfosFaild);
+        deviceApi.delete('e6fe9df5', rent.checkInfosSuccess, rent.checkInfosFaild);
     }
 
     static checkInfosSuccess(res) {

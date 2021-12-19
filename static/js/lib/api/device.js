@@ -14,4 +14,27 @@ export class deviceApi {
             url    : BASE_URL + `/device/${ device_id }`,
         }).then(res => func(res.data)).catch(err => efunc(err));
     }
+
+    static add(data, func, efunc) {
+        axios({
+            method : 'post',
+            url    : BASE_URL + '/device/add',
+            data,
+        }).then(res => func(res.data)).catch(err => efunc(err));
+    }
+
+    static update(device_id, data, func, efunc) {
+        axios({
+            method : 'post',
+            url    : BASE_URL + `/device/update/${ device_id }`,
+            data,
+        }).then(res => func(res.data)).catch(err => efunc(err));
+    }
+
+    static delete(device_id, func, efunc) {
+        axios({
+            method : 'post',
+            url    : BASE_URL + `/device/delete/${ device_id }`,
+        }).then(res => func(res.data)).catch(err => efunc(err));
+    }
 };

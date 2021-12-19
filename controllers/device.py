@@ -7,13 +7,13 @@ class device():
     def infos(req, res):
         """devices information"""
         # search all deviecs information
-        fake_devices = devicesModel.find_all()
-        for s in range(len(fake_devices)):
-            del fake_devices[s]['_id']
+        devices = devicesModel.find_all()
+        for s in range(len(devices)):
+            del devices[s]['_id']
 
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_devices
+        res.data    = devices
         return res
  
     @staticmethod
@@ -23,12 +23,12 @@ class device():
         device_id = req.url_variable['device_id']
        
         # search deviec information
-        fake_device = devicesModel.find(device_id)
-        del fake_device[0]['_id']
+        device = devicesModel.find(device_id)
+        del device[0]['_id']
 
         # make response
         res.message = 'Get devices information successfully.'
-        res.data    = fake_device
+        res.data    = device
         return res
  
     @staticmethod

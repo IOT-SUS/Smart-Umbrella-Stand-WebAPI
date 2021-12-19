@@ -580,6 +580,13 @@ button:hover {
 /* "                          FOR MAIN LANDING PAGE                           " */
 /* ============================================================================ */
 
+/* RE:songtien:1219:地圖 */
+
+#map {
+  height: 800px;
+  width: 100%;
+}
+
 /* RE:songtien:1215 */
 
 input[type=button-home] {

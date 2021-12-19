@@ -9,7 +9,7 @@ class urent():
         # get url variable
         device_id = req.url_variable['device_id']
         
-        # search device by id
+        # search amount by device
         umbrella_amount = umbrellasModel.checkAmount(device_id)   
         
         # check amount
@@ -22,4 +22,8 @@ class urent():
         }
         return res
 
-    
+    @staticmethod
+    def returnUmbrella(req, res):
+        """check device umbrella rent available"""
+        # get url variable
+        device_id = req.url_variable['device_id']

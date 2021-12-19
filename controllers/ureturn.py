@@ -8,16 +8,16 @@ from models.umbrellas import umbrellasModel
 
 class ureturn():
     @staticmethod
-    def checkAvailable(req, res):
+    def checkVacancy(req, res):
         """"check device umbrella rent available"""
         # get url variable
         device_id = req.url_variable['device_id']
         
-        # search device by id
-        fake_device = devicesModel.find(device_id)
+        # check vacancies
+        vacancy = umbrellasModel.checkAmount(device_id) 
 
         # check amount
-        available = True if fake_device['amount'] < 15 else False
+        available = True if vacancy < 5 else False
 
         # make response
         res.message = 'Check device umbrella return successfully.'
@@ -27,17 +27,20 @@ class ureturn():
         return res
 
     @staticmethod
-    def returnUmbre(req, res):
+    def returnUmbrella(req, res):
         # get url variable
         device_id   = req.url_variable['device_id']
-        print(device_id)
+        
+        # search db and check if there has a match device id
+        device = devicesModel.find(device_id)
+
         # get request data
         data = req.get_json()
-        print(data)
+        
         rfid = data['rfid']
         #print(umbrella_id)
         umbrellasModel.update(rfid, {"status_id" : device_id})
 
         # make response
-        res.message = 'Check device umbrella return successfully.'
+        res.message = 'Return umbrella successfully.'
         return res

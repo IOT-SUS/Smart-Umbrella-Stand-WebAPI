@@ -1,4 +1,5 @@
 from app import app
+from controllers.umbrella import umbrella
 
 from libs.utils.router import router
 

@@ -1,6 +1,7 @@
 from pymongo.common import partition_node
 from app import app
 from models.devices import devicesModel
+from models.rents import rentsModel
 from models.umbrellas import umbrellasModel
 
 class device():
@@ -67,7 +68,7 @@ class device():
     @staticmethod
     def update(req, res):
         """update device information"""
-        # get token device id
+        # get url variable
         device_id = req.url_variable['device_id']
         
         # not done yet, this is for future work
@@ -91,11 +92,55 @@ class device():
     @staticmethod
     def delete(req, res):
         """user information"""
-        # get token device id
+        # get url variable
         device_id = req.url_variable['device_id']
  
         devicesModel.delete(device_id)
  
         # make response
         res.message = 'Delete device successfully.'
+        return res
+
+    @staticmethod
+    def rentSuccess(req, res):
+         # get request data
+        data = req.get_json()
+        
+        user_id          = data['user_id']
+        rfid             = data['rfid']
+        rent_device_id   = data['rent_device_id']
+
+        # need to rfid user_id, rent_device_id, return_device_id
+        rent_item = {
+            'rfid'             : rfid,
+            'user_id'          : user_id,
+            'rent_device_id'   : rent_device_id
+        }
+        rentsModel.add(rent_item)
+              
+        res.message = 'Create rent table successfully'
+        return res
+
+    @staticmethod
+    def returnSuccess(req, res):
+        # get url variable
+        rent_table_id = req.url_variable['rent_table_id']
+
+         # get request data
+        data = req.get_json()
+        
+        return_device_id = data['return_device_id']
+        
+
+        # need to update return_device_id
+        return_item = {
+            'return_device_id' : return_device_id
+        }
+        rentsModel.update(rent_table_id, return_item)
+        
+        return_res = rentsModel.find(rent_table_id)
+        del return_res['_id']
+
+        res.message = 'Update rent table successfully. The whole process has been completed.'
+        res.data = return_res
         return res

@@ -47,19 +47,23 @@ class auth():
 
         # need to add phone, name, birthday
         user = {
-            'name' : name,
-            'email' : email,
+            'name'     : name,
+            'email'    : email,
             'password' : password,
             'birthday' : birthday,
-            'phone' : phone
+            'phone'    : phone
         }
-        usersModel.add(user)
 
         # check if email already exist...
+        found_user = usersModel.find_user_by_email(email)
+        if found_user != None:
+            res.message = 'This email has already registered an account'
+            res.data = {'user' : found_user}
+            return res
 
         # create user
-        # ...
+        usersModel.add(user)
 
         # make response
-        res.message = 'Created successfully.'
+        res.message = 'New user registration completed.'
         return res

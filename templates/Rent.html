@@ -30,8 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
-                    <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a></li>
+                    <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a>
+                    </li>
+                    <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link"
+                            href="/member">Member</a></li>
                     <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                 </ul>
@@ -39,7 +41,7 @@
         </div>
     </nav>
 
-        <!-- 
+    <!-- 
 /* ============================================================================ */
 /* "                        RENT ENTER DEVICEID PAGE                          " */
 /* ============================================================================ */ 
@@ -59,7 +61,8 @@
             </div>
             <!-- Rental Form -->
             <form>
-                <input type="text" id="input_device_id" class="fadeIn third" name="input_device_id" placeholder="umbrella stand id">
+                <input type="text" id="input_device_id" class="fadeIn third" name="input_device_id"
+                    placeholder="umbrella stand id">
                 <br><br>
                 <input type="button-rent" id="btn_next" class="fadeIn fourth" value="Next">
             </form>
@@ -100,17 +103,69 @@
                     <input type="text-device" id="amount" class="input fadeIn third" name="amount">
                 </label-m>
 
-                        <!-- 
+                <!-- 
 /* ============================================================================ */
-/* "                      這邊RENT按鈕按下去現在是跳回主頁                      " */
+/* "                      這邊RENT按鈕按下去現在是 LOADING                      " */
 /* ============================================================================ */ 
 -->
 
-                <a href="/"><input type="button-rent" id="btn_rent" class="fadeIn third"
-                        value="Rent Now"></a>
+                <input type="button-rent" id="btn_rent" class="fadeIn third" value="Rent Now">
+            </form>
+
+            <div class="text-center" id="divBuffer">
+                <div class="spinner-border text-secondary" role="status">
+                    <div class="col-md-5"><br><br></div>
+                    <!-- <span class="sr-only">Loading...</span> -->
+                </div>
+            </div>
+            <div class="text-center text-secondary" id="divLoading">
+                <span class="sr-only">　Loading......<br><br></span>
+            </div>
+        </div>
+        <!-- 
+/* ============================================================================ */
+/* "                         THE RENT SUCCESS PAGE                           " */
+/* ============================================================================ */ 
+-->
+
+        <div id="formSuccess">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="https://images.plurk.com/17SgoePIv8joccikZTVJDC.png" id="icon" alt="Success Icon" />
+
+            </div>
+
+            <div class="fadeIn first">
+                <h2>Rent Successfully!<br></h2>
+            </div>
+            <!-- Rental Form -->
+            <form>
+                <a href='/'><input type="button-success" id="btn_next" class="fadeIn second" value="Back to Home"></a>
             </form>
         </div>
-    </div>
+
+        <div id="formFail">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="https://images.plurk.com/3vUahGcRFj4dMshemNyNHH.png" id="icon" alt="Fail Icon" />
+
+            </div>
+
+            <div class="fadeIn first">
+                <h2>Error! Rent Failed :(<br></h2>
+            </div>
+            <!-- Rental Form -->
+            <form>
+                <a href='/rent'><input type="button-success" id="btn_next" class="fadeIn second"
+                        value="Back to Rent"></a>
+            </form>
+        </div>
+
+
+
+
 
         <!-- 
 /* ============================================================================ */
@@ -118,15 +173,14 @@
 /* ============================================================================ */ 
 -->
 
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <script type="module">
-        import { index, device }   from '../static/js/lib/index.js';
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <script type="module">
+            import { index, device } from '../static/js/lib/index.js';
 
-        window.onload = () => {
-            index.checkLogined();
-        };
-    </script>
+            window.onload = () => {
+                index.checkLogined();
+            };
+        </script>
 </body>
+
 </html>
-
-

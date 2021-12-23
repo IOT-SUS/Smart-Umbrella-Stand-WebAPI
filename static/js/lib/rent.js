@@ -7,21 +7,33 @@ nextButton.onclick = () => {
     rent.checkInfos();
 }
 
+var rentButton = document.getElementById("btn_rent");
+rentButton.onclick = () => {
+    document.getElementById("divBuffer").style.display = "block";
+    document.getElementById("divLoading").style.display = "block";
+    document.getElementById("btn_rent").style.display = "none";
+}
+
+// 這裡的觸發我暫時都用緩衝按鈕，緩衝圖會切到租借失敗，緩衝文字會切到租借成功
+
+var tmpButton = document.getElementById("divBuffer");
+tmpButton.onclick = () => {
+    document.getElementById("formRent").style.display   = "none";
+    document.getElementById("formFail").style.display = "block";
+}
+
+var tmpButton = document.getElementById("divLoading");
+tmpButton.onclick = () => {
+    document.getElementById("formRent").style.display   = "none";
+    document.getElementById("formSuccess").style.display = "block";
+}
+
 export class rent {
     static checkInfos() {
-        // testing...
         const device_id = document.getElementById("input_device_id").value;
         console.log(device_id);
         //deviceApi.infos(rent.checkInfosSuccess, rent.checkInfosFailed);
         deviceApi.info(device_id, rent.checkInfosSuccess, rent.checkInfosFailed);
-
-        // const data = {
-        //     'location'      : ':D',
-        //     'embedded_code' : ['123', '456']
-        // };
-
-        // deviceApi.add(data, rent.checkInfosSuccess, rent.checkInfosFaild);
-        // deviceApi.delete('e6fe9df5', rent.checkInfosSuccess, rent.checkInfosFaild);
     }
 
     static checkInfosSuccess(res) {

@@ -23,8 +23,8 @@ README.md
 ## Installation
 ```bash
 # Step 1 使用 git 下載專案
-git clone https://github.com/IOT-SUS/BackendAPI-Flask-Example.git
-cd BackendAPI-Flask-Example
+git clone https://github.com/IOT-SUS/BackendAPI-Flask-Structure.git
+cd BackendAPI-Flask-Structure
 
 # Step 2 使用 Miniconda 建立虛擬 python 環境
 conda create --name sus python=3.7

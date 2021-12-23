@@ -1,7 +1,7 @@
 # BackendAPI-Flask-Structure
 結構化的範例程式
 
-![4Lny202EtQjBtApbyxC3W5](https://user-images.githubusercontent.com/60885166/147195578-83f994af-392d-4596-afa6-bc7876575724.png)
+<img width="480" alt="16l3TukgY6FI71lTOSSvAS" src="https://user-images.githubusercontent.com/60885166/147197836-5cec2839-89b6-4ae7-966a-3d095c723dda.png">
 
 ## File Structure
 ```bash

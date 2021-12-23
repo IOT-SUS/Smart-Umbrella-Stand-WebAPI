@@ -36,7 +36,18 @@ class rrsModel():
     @staticmethod
     def find_by_device(device_id, action, status):
         now_time = datetime.datetime.now().isoformat()
+
         return list(mongo.db.rrs.find({'device_id': device_id, 
+                                       'action' : action, 
+                                       'status' : status, 
+                                       'expire_time' : {"$gte" : now_time}}))[0]
+
+    # For user to searching rrs table 
+    @staticmethod
+    def find_by_user(user_id, action, status):
+        now_time = datetime.datetime.now().isoformat()
+
+        return list(mongo.db.rrs.find({'user_id': user_id, 
                                        'action' : action, 
                                        'status' : status, 
                                        'expire_time' : {"$gte" : now_time}}))[0]

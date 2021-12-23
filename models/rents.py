@@ -19,7 +19,7 @@ class rentsModel():
         
     @staticmethod
     def find(rent_id):
-        return list(mongo.db.rents.find({'public_id': rent_id}))
+        return list(mongo.db.rents.find({'public_id': rent_id}))[0]
 
     @staticmethod
     def find_all():
@@ -27,6 +27,8 @@ class rentsModel():
 
     @staticmethod
     def update(rent_id, update_query):
+        now_time = datetime.now().isoformat()
+        update_query['return_time'] = now_time
         mongo.db.rents.update_one({'public_id': rent_id}, {'$set': update_query})
     
     @staticmethod

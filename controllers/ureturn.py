@@ -4,6 +4,7 @@ from pymongo.common import partition_node
 from app import app
 from models.devices import devicesModel
 from models.rents import rentsModel
+from models.rrs import rrsModel
 from models.umbrellas import umbrellasModel
 
 class ureturn():
@@ -25,22 +26,32 @@ class ureturn():
             'available' : available
         }
         return res
-
+    
     @staticmethod
     def returnUmbrella(req, res):
+        """check device umbrella rent available"""
         # get url variable
-        device_id   = req.url_variable['device_id']
-        
-        # search db and check if there has a match device id
-        device = devicesModel.find(device_id)
+        device_id = req.url_variable['device_id']
 
         # get request data
-        data = req.get_json()
-        
-        rfid = data['rfid']
-        #print(umbrella_id)
-        umbrellasModel.update(rfid, {"status_id" : device_id})
+        data = req.get_json() 
+
+        # need to add action, status, user_id, device_id
+        action    = data['action']
+        status    = data['status']
+        user_id   = data['user_id'] 
+        device_id = data['device_id']
+
+        returner_status = {
+            'action' : action,
+            'status' : status,
+            'user_id' : user_id,
+            'device_id' : device_id
+        }
+
+        # insert renter_status to mongoDB
+        rrsModel.add(returner_status)
 
         # make response
-        res.message = 'Return umbrella successfully.'
+        res.message = 'Create rrs table of returner status successfully.'
         return res

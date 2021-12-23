@@ -101,6 +101,12 @@
 
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o">
     </script> -->
+
+
+    <div class="text-center">
+        <img class="img-fluid rounded-circle mb-3" src="https://images.plurk.com/6phrMWYaOtdipBVrtHLCrf.png"
+            alt="..." />
+   
     <div id="output">
         <script id="map_" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o&callback=initMap"></script>
     </div>
@@ -111,12 +117,12 @@
         var map;
         function initMap() {
             let location = {
-                lat: 25.018597, // 經度
-                lng: 121.534225 // 緯度
+                lat: 25.018163, // 經度
+                lng: 121.522917 // 緯度
             };
             map = new google.maps.Map(document.getElementById('map'), {
                 center: location,// 我設在本部跟分部的中間 [25.018597,121.534225]
-                zoom: 15,
+                zoom: 14,
             });
         }
     </script>

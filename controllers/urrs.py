@@ -1,9 +1,9 @@
 from re import I
 from app import app
 from models.rrs import rrsModel
-from models.umbrellas import umbrellasModel
 
 class urrs():
+    
     @staticmethod
     def device_polling(req, res):
         # get url variable

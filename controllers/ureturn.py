@@ -1,13 +1,12 @@
 import re
 
-from pymongo.common import partition_node
 from app import app
-from models.devices import devicesModel
-from models.rents import rentsModel
 from models.rrs import rrsModel
 from models.umbrellas import umbrellasModel
+from pymongo.common import partition_node
 
 class ureturn():
+    
     @staticmethod
     def checkVacancy(req, res):
         """"check device umbrella rent available"""

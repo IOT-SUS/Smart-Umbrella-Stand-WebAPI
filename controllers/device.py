@@ -1,10 +1,11 @@
-from pymongo.common import partition_node
 from app import app
-from models.devices import devicesModel
 from models.rents import rentsModel
+from models.devices import devicesModel
 from models.umbrellas import umbrellasModel
+from pymongo.common import partition_node
 
 class device():
+    
     @staticmethod
     def infos(req, res):
         """devices information"""

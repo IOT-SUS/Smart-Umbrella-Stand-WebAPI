@@ -4,6 +4,7 @@ from models.rrs import rrsModel
 from models.umbrellas import umbrellasModel
 
 class urent():
+    
     @staticmethod
     def checkAvailable(req, res):
         """"check device umbrella rent available"""

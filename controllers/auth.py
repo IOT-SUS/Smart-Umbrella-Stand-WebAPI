@@ -1,4 +1,3 @@
-import datetime
 from app import app
 from models.users import usersModel
 from libs.utils.jsonWebToken import jsonWebToken as jwt

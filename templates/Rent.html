@@ -176,9 +176,11 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <script type="module">
             import { index, device } from '../static/js/lib/index.js';
-
+            import { rent }          from '../static/js/lib/rent.js';
+            
             window.onload = () => {
                 index.checkLogined();
+                rent.polling();
             };
         </script>
 </body>

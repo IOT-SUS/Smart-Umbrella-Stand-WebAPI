@@ -54,14 +54,16 @@ class auth():
         }
 
         # check if email already exist...
-        found_user = usersModel.find_user_by_email(email)
-        if found_user != None:
-            res.message = 'This email has already registered an account'
-            res.data = {'user' : found_user}
+        try:
+            found_user = usersModel.find_user_by_email(email)
+        
+            res.message    = 'This email has already registered an account'
+            res.statusCode = 403
+            res.data       = {'user' : found_user}
             return res
-
-        # create user
-        usersModel.add(user)
+        except:
+            # create user
+            usersModel.add(user)
 
         # make response
         res.message = 'New user registration completed.'

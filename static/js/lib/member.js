@@ -1,11 +1,13 @@
 import { getJwtToken } from './utils.js';
 import { userApi }     from './api/user.js';
+import { rentApi }     from './api/rent.js';
 import { index }       from './index.js';
 
 export class member {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');
         userApi.info(jwtToken, member.checkLoginedSuccess, member.checkLoginedFaild);
+        rentApi.getRecords(jwtToken, console.log, console.log);
     }
 
     static checkLoginedSuccess(res) {

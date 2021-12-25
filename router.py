@@ -17,12 +17,12 @@ from middlewares.adminAuthentication import adminAuthentication
 # "                         FRONTEND HTML PAGE                               "
 # ============================================================================
 
-# Home page
-router.render_page(url='/',       template='index.html')
-router.render_page(url='/rent',   template='rent.html')
+# Web page
+router.render_page(url='/'      , template='index.html')
+router.render_page(url='/rent'  , template='rent.html')
 router.render_page(url='/member', template='member.html')
 router.render_page(url='/signup', template='signupform.html')
-router.render_page(url='/login',  template='loginform.html')
+router.render_page(url='/login' , template='loginform.html')
 
 
 # ============================================================================
@@ -39,28 +39,27 @@ router.post(url='/api/user/update', authentication=authentication, controller=us
 router.post(url='/api/user/delete', authentication=authentication, controller=user.delete)
 
 # Device route
-router.get (url='/api/device/<device_id>'                  , controller=device.info)
-router.get (url='/api/devices'                             , controller=device.infos)
-router.post(url='/api/device/add'                          , controller=device.add)
-router.post(url='/api/device/update/<device_id>'           , controller=device.update)
-router.post(url='/api/device/delete/<device_id>'           , controller=device.delete)
-router.post(url='/api/device/rentSuccess'                  , controller=device.rentSuccess)
-router.post(url='/api/device/returnSuccess/<rent_table_id>', controller=device.returnSuccess)
+router.get (url='/api/devices'                  , controller=device.infos)
+router.get (url='/api/device/<device_id>'       , controller=device.info)
+router.post(url='/api/device/add'               , controller=device.add)
+router.post(url='/api/device/update/<device_id>', controller=device.update)
+router.post(url='/api/device/delete/<device_id>', controller=device.delete)
 
 # Rent api
-router.get (url='/api/device/<device_id>/rent', controller=urent.checkAvailable)
-router.post(url='/api/device/<device_id>/rent', controller=urent.rentUmbrella)
+router.get (url='/api/rent/records'            , authentication=authentication, controller=urent.record)
+router.get (url='/api/rent/vacancy/<device_id>', controller=urent.checkAvailable)
+router.post(url='/api/rent/success/<device_id>', controller=urent.success)
+router.post(url='/api/rent/<device_id>'        , authentication=authentication, controller=urent.add)
 
 # Return api
-router.get (url='/api/device/<device_id>/return', controller=ureturn.checkVacancy)
-router.post(url='/api/device/<device_id>/return', controller=ureturn.returnUmbrella)
+router.get (url='/api/return/vacancy/<device_id>', controller=ureturn.checkVacancy)
+router.post(url='/api/return/success/<device_id>', controller=ureturn.success)
+router.post(url='/api/return/<device_id>'        , controller=ureturn.add)
 
 # RRs api
-router.get (url='/api/rrs/user/polling/<user_id>/action/<action>'     , controller=urrs.user_polling)
-router.get (url='/api/rrs/device/polling/<device_id>/action/<action>' , controller=urrs.device_polling)
-router.post(url='/api/rrs/update/<rrs_id>'                            , controller=urrs.device_updating_rrs)
+router.get (url='/api/rrs/<rrs_id>'                                  , controller=urrs.info)
+router.get (url='/api/rrs/polling/action/<action>/device/<device_id>', controller=urrs.devicePolling)
+router.get (url='/api/rrs/polling/action/<action>/user'              , authentication=authentication, controller=urrs.userPolling)
 
 # Umbrella api
 router.post(url='/api/umbrella/add', controller=umbrella.add)
-
-#router.post(url='/api/ing/<device_id>/renting', controller=urent.renting)

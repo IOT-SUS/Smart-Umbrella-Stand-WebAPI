@@ -26,6 +26,10 @@ class umbrellasModel():
         return list(mongo.db.umbrellas.find({'public_id': umbrella_id}))
 
     @staticmethod
+    def find_by_rfid(rfid):
+        return list(mongo.db.umbrellas.find({'rfid': rfid}))[0]
+
+    @staticmethod
     def find_all():
         return umbrellasModel.umbrellas
 

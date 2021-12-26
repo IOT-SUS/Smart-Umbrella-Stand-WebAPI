@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Smart Umbrella Stand</title>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https:/cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-        <!-- ========================== -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <!-- <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script> -->
-        <script type="module" src="{{ url_for('static', filename='js/lib/member.js') }}"></script>
-        <!-- ========================== -->
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-              <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                      <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
-                      <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Login</a></li>
-                  </ul>
-              </div>
-          </div>
-        </nav>
-      <div class="wrapper fadeInDown">
-        <div id="formMember">
-          <form>
 
-            <div class="fadeIn first">
-              <h2><br>Member Info<br><br></h2>
-            </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Smart Umbrella Stand</title>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https:/cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
 
-            <label-m>
-              <p class="label-txt fadeIn first">EMAIL</p>
-              <input type="text-member" class="input fadeIn second" name="email" id="email">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <label-m>
-              <p class="label-txt fadeIn first">NAME</p>
-              <input type="text-member" class="input fadeIn second" name="name" id="name">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <label-m>
-              <p class="label-txt fadeIn second">PHONE</p>
-              <input type="text-member" class="input fadeIn third" name="phone" id="phone">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <label-m>
-              <p class="label-txt fadeIn second">BIRTHDAY</p>
-              <input type="text-member" class="input fadeIn third" name="birthday" id="birthday">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <label-m>
-              <p class="label-txt fadeIn third">SUBSCRIBED</p>
-              <input type="text-member" class="input fadeIn fourth" name="subscribed" id="subscribed">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <label-m>
-              <p class="label-txt fadeIn third">ADMIN</p>
-              <input type="text-member" class="input fadeIn fourth" name="admin" id="admin">
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label-m>
-            <input type="submit" class="fadeIn fifth" value="Save">
-            <input type="button-white" id="logout_button" class="fadeIn fifth" value="Logout">
-          </form>
-        </div>>
+  <!-- ========================== -->
+</head>
+
+<body>
+  <!-- Responsive navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
+          <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a>
+          </li>
+          <li class="nav-item" id="signup_item" style="display: none;"><a class="nav-link" href="/signup">Sign-up</a>
+          </li>
+          <li class="nav-item" id="login_item" style="display: none;"><a class="nav-link active" aria-current="page"
+              href="/login">Login</a></li>
+        </ul>
       </div>
-    <script type="module">
-        import { member }   from '../static/js/lib/member.js';
+    </div>
+  </nav>
+  <div class="wrapper fadeInDown">
+    <div id="formMember">
+      <form>
 
-        window.onload = () => {
-          member.checkLogined();
-        };
-    </script>
-    </body>
+        <div class="fadeIn first">
+          <h2><br>Member Info<br><br></h2>
+        </div>
+
+        <label-m>
+          <p class="label-txt fadeIn first">EMAIL</p>
+          <input type="text-member" class="input fadeIn second" name="email" id="email">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <label-m>
+          <p class="label-txt fadeIn first">NAME</p>
+          <input type="text-member" class="input fadeIn second" name="name" id="name">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <label-m>
+          <p class="label-txt fadeIn second">PHONE</p>
+          <input type="text-member" class="input fadeIn third" name="phone" id="phone">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <label-m>
+          <p class="label-txt fadeIn second">BIRTHDAY</p>
+          <input type="text-member" class="input fadeIn third" name="birthday" id="birthday">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <label-m>
+          <p class="label-txt fadeIn third">SUBSCRIBED</p>
+          <input type="text-member" class="input fadeIn fourth" name="subscribed" id="subscribed">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <label-m>
+          <p class="label-txt fadeIn third">ADMIN</p>
+          <input type="text-member" class="input fadeIn fourth" name="admin" id="admin">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label-m>
+        <input type="submit" class="fadeIn fifth" value="Save">
+        <input type="button-white" id="logout_button" class="fadeIn fifth" value="Logout">
+      </form>
+    </div>>
+  </div>
+  <script type="module">
+    import { member } from '../static/js/lib/member.js';
+
+    window.onload = () => {
+      member.checkLogined();
+    };
+  </script>
+  <!-- ========================== -->
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script> -->
+  <script type="module" src="{{ url_for('static', filename='js/lib/member.js') }}"></script>
+</body>
+
 </html>

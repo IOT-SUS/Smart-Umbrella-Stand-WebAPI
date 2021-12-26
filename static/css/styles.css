@@ -1077,12 +1077,20 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
+[type=button-white],
+[type=button-rent],
+[type=button-home],
+[type=button-success],
 [type=submit] {
   -webkit-appearance: button;
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
+[type=button-white]:not(:disabled),
+[type=button-rent]:not(:disabled),
+[type=button-home]:not(:disabled),
+[type=button-success]:not(:disabled),
 [type=submit]:not(:disabled) {
   cursor: pointer;
 }

@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <!-- 測試 -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Smart Umbrella Stand</title>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-        <!-- ========================== -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
-        <script type="module" src="{{ url_for('static', filename='js/lib/signup.js') }}"></script>
-        <!-- ========================== -->
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-              <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                      <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
-                      <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Login</a></li>
-                  </ul>
-              </div>
-          </div>
-        </nav>
 
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-              <!-- Tabs Titles -->
-          
-              <!-- Icon -->
-              <div class="fadeIn first">
-                <h2><br>Sign Up<br></h2>
-              </div>
-          
-              <!-- Login Form -->
-              <form>
-                <input type="text" id="email" class="fadeIn second" name="signup" placeholder="email">
-                <input type="text" id="name" class="fadeIn second" name="signup" placeholder="name">
-                <input type="text" id="phone" class="fadeIn third" name="signup" placeholder="phone">
-                <input type="text" id="birthday" class="fadeIn third" name="signup" placeholder="birthday">
-                <input type="text" id="password" class="fadeIn fourth" name="signup" placeholder="password">
-                <input type="text" id="password again" class="fadeIn fourth" name="signup" placeholder="password again">
-                <input type="button" class="fadeIn fixth" value="Sign Up" id="signup_button">
-              </form>
-       
-            </div>
-          </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Smart Umbrella Stand</title>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
 
-      <script type="module">
-        import { index } from '../static/js/lib/index.js';
+  <!-- ========================== -->
+</head>
 
-        window.onload = () => {
-            index.checkLogined();
-        };
-    </script>
-    </body>
+<body>
+  <!-- Responsive navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item" id="rent_item" style="display: none;"><a class="nav-link" href="/rent">Rent</a></li>
+          <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link" href="/member">Member</a>
+          </li>
+          <li class="nav-item" id="signup_item" style="display: block;"><a class="nav-link active" aria-current="page"
+              href="/signup">Sign-up</a></li>
+          <li class="nav-item" id="login_item" style="display: block;"><a class="nav-link" href="/login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <h2><br>Sign Up<br></h2>
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="email" class="fadeIn second" name="signup" placeholder="email">
+        <input type="text" id="name" class="fadeIn second" name="signup" placeholder="name">
+        <input type="text" id="phone" class="fadeIn third" name="signup" placeholder="phone">
+        <input type="text" id="birthday" class="fadeIn third" name="signup" placeholder="birthday">
+        <input type="text" id="password" class="fadeIn fourth" name="signup" placeholder="password">
+        <input type="text" id="password again" class="fadeIn fourth" name="signup" placeholder="password again">
+        <input type="button" class="fadeIn fixth" value="Sign Up" id="signup_button">
+      </form>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import { index } from '../static/js/lib/index.js';
+
+    window.onload = () => {
+      index.checkLogined();
+    };
+  </script>
+  <!-- ========================== -->
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/lib/signup.js') }}"></script>
+</body>
+
 </html>

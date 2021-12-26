@@ -12,10 +12,7 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-    <!-- ========================== -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script> -->
-    <script type="module" src="{{ url_for('static', filename='js/lib/rent.js') }}"></script>
+
     <!-- ========================== -->
 </head>
 
@@ -34,8 +31,10 @@
                     </li>
                     <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link"
                             href="/member">Member</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item" id="signup_item" style="display: none;"><a class="nav-link"
+                            href="/signup">Sign-up</a></li>
+                    <li class="nav-item" id="login_item" style="display: none;"><a class="nav-link"
+                            href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -176,13 +175,19 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <script type="module">
             import { index, device } from '../static/js/lib/index.js';
-            import { rent }          from '../static/js/lib/rent.js';
-            
+            import { rent } from '../static/js/lib/rent.js';
+
             window.onload = () => {
                 index.checkLogined();
                 rent.polling();
             };
         </script>
+        <!-- ========================== -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script> -->
+        <script type="module" src="{{ url_for('static', filename='js/lib/rent.js') }}"></script>
 </body>
 
 </html>

@@ -12,9 +12,7 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-    <!-- ========================== -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+
     <!-- ========================== -->
 </head>
 
@@ -33,8 +31,10 @@
                     </li>
                     <li class="nav-item" id="member_item" style="display: none;"><a class="nav-link"
                             href="/member">Member</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item" id="signup_item" style="display: block;"><a class="nav-link"
+                            href="/signup">Sign-up</a></li>
+                    <li class="nav-item" id="login_item" style="display: block;"><a class="nav-link"
+                            href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -106,44 +106,51 @@
     <div class="text-center">
         <img class="img-fluid rounded-circle mb-3" src="https://images.plurk.com/6phrMWYaOtdipBVrtHLCrf.png"
             alt="..." />
-   
-    <div id="output">
-        <script id="map_" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o&callback=initMap"></script>
-    </div>
 
-    <div id="map" class="py-5 bg-image-full fadeInDown"></div>
-
-    <script>
-        var map;
-        function initMap() {
-            let location = {
-                lat: 25.018163, // 經度
-                lng: 121.522917 // 緯度
-            };
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: location,// 我設在本部跟分部的中間 [25.018597,121.534225]
-                zoom: 14,
-            });
-        }
-    </script>
-
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; IOT-SUS 2021</p>
+        <div id="output">
+            <script id="map_" async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-9pp8ZbwHBTfqQASnkNEmDDqlb05L9o&callback=initMap"></script>
         </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <script type="module">
-        import { index, device }   from '../static/js/lib/index.js';
 
-        window.onload = () => {
-            index.checkLogined();
-            device.checkInfos();
-        };
-    </script>
+        <!-- ========================== -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
+
+        <div id="map" class="py-5 bg-image-full fadeInDown"></div>
+
+        <script>
+            var map;
+            function initMap() {
+                let location = {
+                    lat: 25.018163, // 經度
+                    lng: 121.522917 // 緯度
+                };
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,// 我設在本部跟分部的中間 [25.018597,121.534225]
+                    zoom: 14,
+                });
+            }
+        </script>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; IOT-SUS 2021</p>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <script type="module">
+            import { index, device } from '../static/js/lib/index.js';
+
+            window.onload = () => {
+                index.checkLogined();
+                device.checkInfos();
+            };
+        </script>
+
 </body>
+
 </html>

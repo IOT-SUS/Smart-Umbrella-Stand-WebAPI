@@ -11,6 +11,8 @@ export class index {
     static checkLoginedSuccess(res) {
         document.getElementById("rent_item").style.display = "block"
         document.getElementById("member_item").style.display = "block"
+        document.getElementById("signup_item").style.display = "none"
+        document.getElementById("login_item").style.display = "none"
         document.getElementById("member_item").childNodes[0].innerHTML = res.data.email;
     }
 

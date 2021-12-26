@@ -27,12 +27,20 @@ class umbrellasModel():
         return list(mongo.db.umbrellas.find({'public_id': umbrella_id}))
 
     @staticmethod
+    def find_by_userID(user_id):
+        return list(mongo.db.umbrellas.find({'status_id': user_id}))
+
+    @staticmethod
+    def find_by_deviceID(device_id):
+        return list(mongo.db.umbrellas.find({'status_id': device_id}))    
+
+    @staticmethod
     def find_by_rfid(rfid):
         return list(mongo.db.umbrellas.find({'rfid': rfid}))[0]
 
     @staticmethod
     def find_all():
-        return umbrellasModel.umbrellas
+        return list(mongo.db.umbrellas.find({}))
 
     @staticmethod
     def update(rfid, update_query):

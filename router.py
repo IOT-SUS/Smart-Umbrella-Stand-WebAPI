@@ -47,6 +47,7 @@ router.post(url='/api/device/delete/<device_id>', controller=device.delete)
 
 # Rent api
 router.get (url='/api/rent/records'            , authentication=authentication, controller=urent.record)
+router.get (url='/api/rent/records_all'        , authentication=authentication, controller=urent.records)
 router.get (url='/api/rent/vacancy/<device_id>', controller=urent.checkAvailable)
 router.post(url='/api/rent/success/<device_id>', controller=urent.success)
 router.post(url='/api/rent/<device_id>'        , authentication=authentication, controller=urent.add)
@@ -62,4 +63,6 @@ router.get (url='/api/rrs/polling/action/<action>/device/<device_id>', controlle
 router.get (url='/api/rrs/polling/action/<action>/user'              , authentication=authentication, controller=urrs.userPolling)
 
 # Umbrella api
-router.post(url='/api/umbrella/add', controller=umbrella.add)
+router.get (url='/api/umbrella/record/<user_id>', authentication=authentication, controller=umbrella.record)
+router.get (url='/api/umbrella/records'         , authentication=authentication, controller=umbrella.records)
+router.post(url='/api/umbrella/add'             , controller=umbrella.add)

@@ -2,6 +2,7 @@ from app import app
 from models.rrs import rrsModel
 
 class urrs():
+    
     @staticmethod
     def addRent(req, res):
         # get url variable

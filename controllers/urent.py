@@ -25,6 +25,22 @@ class urent():
         return res
 
     @staticmethod
+    def records(req, res):
+        """"check rent record"""
+        # search rent table by user_id
+        rent_data = rentsModel.find_all()       
+        
+        for data in rent_data:
+            del data['_id']
+    
+        # make response
+        res.message = 'Check all rent records successfully.'
+        res.data    = {
+            'records' : rent_data
+        }
+        return res
+
+    @staticmethod
     def add(req, res):
         """"add rent"""
         # check Available

@@ -22,6 +22,5 @@ app.config['TOKEN_EXPIRE_TIME'] = config.TOKEN_EXPIRE_TIME
 # python mongodb
 mongo  = PyMongo(app)
 
-
 # add router
 from router import *

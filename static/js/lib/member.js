@@ -29,13 +29,34 @@ export class member {
 
     static checkTableSuccess(res) {
         console.log(res);
-        console.log("!!!!!!!!!!!!!!!!!!!!");
-        res.data.forEach(data =>{
-            $('#myRecordTable').bootstrapTable({})
+        document.getElementById("number").value      = res.data.records.length;
+            $('#myRecordTable').bootstrapTable({
+                columns:[ 
+                    {field:'checkbox', title:'checkbox', align:'center', width:40, visible:true, checkbox:true},
+                    {field:'rent_device_id', title:'Rent Device', align:'center', width:120, visible:true},
+                    {field:'rent_time', title:'Rent Time', align:'center', width:120, visible:true},
+                    {field:'return_device_id', title:'Return Device', align:'center', width:120, visible:true},
+                    {field:'return_time', title:'Return Time', align:'center', width:120, visible:true}
+                  ],
+                  data : getMyData(),
+                  search : true //查詢
 
-            // 寫ㄌ好久寫不出來不會用boostrap的表格還在研究中QAQ
+            })
 
-        })
+            function getMyData() {
+                var mydata = [];
+                for (var i = 0; i < res.data.records.length; i++) {
+                  mydata.push({
+                    rent_device_id: res.data.records[i].rent_device_id,
+                    rent_time: res.data.records[i].rent_time,
+                    return_device_id:res.data.records[i].return_device_id,
+                    return_time: res.data.records[i].return_time
+                  });
+                }
+                return mydata;
+              }
+
+
     }
 
     static checkTableFaild(err) {

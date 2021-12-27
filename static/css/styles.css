@@ -292,6 +292,10 @@ input[type=text-device]:focus {
   /* border-bottom: 2px solid #42476c; */
 }
 
+.mr-top{
+  margin-top: -1.5em;
+}
+
 
 #formDevice {
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -321,11 +325,11 @@ input[type=text-device]:focus {
   border-radius: 10px 10px 10px 10px;
   background: #fff;
   padding-top: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 4em;
+  padding-right: 4em;
   padding-bottom: 1em;
   width: 90%;
-  max-width: 750px;
+  max-width: 1000px;
   position: relative;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -683,6 +687,36 @@ input[type=text-member]:focus {
   font-family: 'Arima Madurai', cursive;
   /* border-bottom: 2px solid #42476c; */
 }
+
+
+input[type=text-number] {
+  background-color: #fcfcfc;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align:center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text-number]:focus {
+  background-color: #fff;
+  color: #42476c;
+  font-family: 'Arima Madurai', cursive;
+  /* border-bottom: 2px solid #42476c; */
+}
+
 
 .line {
   position: absolute;

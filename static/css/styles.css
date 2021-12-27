@@ -210,11 +210,6 @@ input[type=button-success]:hover{
   color: #fff;
 }
 
-.myhomebutton {
-  width: 100%;
-  height: auto;
-  position: relative;
-}
 
 input[type=button-success]:active{
   -moz-transform: scale(0.95);
@@ -223,6 +218,49 @@ input[type=button-success]:active{
   -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
+
+/* RE:songtien:1226:rentalrecord*/
+
+
+input[type=button-record] {
+  background-color: #fff;
+  border: none;
+  color: #42476c;
+  padding: 0.8em 1.5em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-decoration: none;
+  max-width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 14px;
+  -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
+  box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 50px;
+  margin: 10px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button-record]:hover{
+  background-color: #797d9f;
+  -webkit-box-shadow: 0 0 0 0;
+  color: #fff;
+}
+
+
+input[type=button-record]:active{
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
 
 
 input[type=text-device] {
@@ -270,6 +308,29 @@ input[type=text-device]:focus {
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
   /* display: none; */
+}
+
+/* #memberSecondPage{
+  display:none;
+  position: relative;
+  text-align: center;
+} */
+
+#recordTable{
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  width: 90%;
+  max-width: 750px;
+  position: relative;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  display: none;
 }
 
 #formRent {
@@ -345,6 +406,7 @@ input[type=text-device]:focus {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+  /* display: none; */
 }
 
 #formFooter {
@@ -743,7 +805,7 @@ input[type=button-white]  {
   box-shadow: 0 10px 30px 0 rgba(95, 132, 233, 0.25);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-  margin: 30px 20px 30px 20px;
+  margin: 0px 20px 30px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1080,6 +1142,7 @@ button,
 [type=button-white],
 [type=button-rent],
 [type=button-home],
+[type=button-record],
 [type=button-success],
 [type=submit] {
   -webkit-appearance: button;
@@ -1089,6 +1152,7 @@ button:not(:disabled),
 [type=reset]:not(:disabled),
 [type=button-white]:not(:disabled),
 [type=button-rent]:not(:disabled),
+[type=button-record]:not(:disabled),
 [type=button-home]:not(:disabled),
 [type=button-success]:not(:disabled),
 [type=submit]:not(:disabled) {
@@ -8441,6 +8505,14 @@ textarea.form-control-lg {
 
 .text-center {
   text-align: center !important;
+}
+
+.mg-small-bot{
+  margin-bottom: -1em;
+}
+
+.mg-small-top{
+  margin-top: -2em;
 }
 
 .text-decoration-none {

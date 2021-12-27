@@ -113,6 +113,8 @@
         </div>
 
         <!-- ========================== -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script type="module" src="{{ url_for('static', filename='js/lib/index.js') }}"></script>
 
@@ -138,8 +140,7 @@
                 <p class="m-0 text-center text-white">Copyright &copy; IOT-SUS 2021</p>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- Core theme JS-->
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <script type="module">
@@ -154,3 +155,6 @@
 </body>
 
 </html>
+
+
+<!-- RE:songtien:1226:js匯入的順序不能亂改會嚴重影響 NAVBAR 跟地圖的載入 -->

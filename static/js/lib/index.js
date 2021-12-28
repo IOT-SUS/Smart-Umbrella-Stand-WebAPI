@@ -2,6 +2,7 @@ import { getJwtToken } from './utils.js';
 import { userApi } from './api/user.js';
 import { deviceApi } from './api/device.js';
 
+
 export class index {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');

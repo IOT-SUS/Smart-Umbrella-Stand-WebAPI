@@ -20,7 +20,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Smart Umbrella Stand</a>
+            <a class="navbar-brand" href="/" id="brand_item">Smart Umbrella Stand</a>
+            <a class="navbar-brand" href="/member#btn_record" id="renting_item" style="display: none;">Renting Now</a>
+            <img src="https://images.plurk.com/4uAXyIP1vYbrmCzXrzjS1e.png" style="display: none;" id="renting_icon" alt="Table Icon" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -176,10 +178,12 @@
         <script type="module">
             import { index, device } from '../static/js/lib/index.js';
             import { rent } from '../static/js/lib/rent.js';
+            import { umbrellaTable } from '../static/js/lib/umbrella.js';
 
             window.onload = () => {
                 index.checkLogined();
                 rent.polling();
+                umbrellaTable.get();
             };
         </script>
         <!-- ========================== -->

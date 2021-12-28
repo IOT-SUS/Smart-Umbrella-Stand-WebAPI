@@ -81,6 +81,14 @@ html {
   background-color: #525674;
 }
 
+/* #status{
+  display:none;
+} */
+
+.mg-space-top{
+  margin-top: 1em !important;
+}
+
 .wrapper.fadeInDown{
   background-color: #525674;
 }
@@ -329,7 +337,7 @@ input[type=text-device]:focus {
   padding-right: 4em;
   padding-bottom: 1em;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   position: relative;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -707,7 +715,7 @@ input[type=text-number] {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 40px;
 }
 
 input[type=text-number]:focus {
@@ -717,6 +725,35 @@ input[type=text-number]:focus {
   /* border-bottom: 2px solid #42476c; */
 }
 
+input[type=text-plain] {
+  background-color: #f6f7ff;
+  border: none;
+  color: #0d0d0d;
+  padding: 32px 32px;
+  text-align:center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: -2em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  letter-spacing: 0.07em;
+  /* border: 2px solid #f6f6f6; */
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 40px;
+}
+
+input[type=text-plain]:focus {
+  background-color: #fff;
+  color: #42476c;
+  font-family: 'Arima Madurai', cursive;
+  /* border-bottom: 2px solid #42476c; */
+}
 
 .line {
   position: absolute;
@@ -1097,6 +1134,10 @@ figure {
 img,
 svg {
   vertical-align: middle;
+}
+
+img-set{
+  width:100%;
 }
 
 table {

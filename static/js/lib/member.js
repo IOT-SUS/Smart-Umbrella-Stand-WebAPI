@@ -2,12 +2,13 @@ import { getJwtToken } from './utils.js';
 import { userApi }     from './api/user.js';
 import { rentApi }     from './api/rent.js';
 import { index }       from './index.js';
+import { umbrellaTable } from './umbrella.js';
 
 export class member {
     static checkLogined() {
         const jwtToken = getJwtToken('service_token');
         userApi.info(jwtToken, member.checkLoginedSuccess, member.checkLoginedFaild);
-        rentApi.getRecords(jwtToken, member.checkTableSuccess, member.checkTableFaild);
+        umbrellaTable.get();
     }
 
     static checkLoginedSuccess(res) {
@@ -27,42 +28,8 @@ export class member {
         location.href = '/login';
     }
 
-    static checkTableSuccess(res) {
-        console.log(res);
-        document.getElementById("number").value      = res.data.records.length;
-            $('#myRecordTable').bootstrapTable({
-                columns:[ 
-                    {field:'checkbox', title:'checkbox', align:'center', width:40, visible:true, checkbox:true},
-                    {field:'rent_device_id', title:'Rent Device', align:'center', width:120, visible:true},
-                    {field:'rent_time', title:'Rent Time', align:'center', width:120, visible:true},
-                    {field:'return_device_id', title:'Return Device', align:'center', width:120, visible:true},
-                    {field:'return_time', title:'Return Time', align:'center', width:120, visible:true}
-                  ],
-                  data : getMyData(),
-                  search : true //查詢
-
-            })
-
-            function getMyData() {
-                var mydata = [];
-                for (var i = 0; i < res.data.records.length; i++) {
-                  mydata.push({
-                    rent_device_id: res.data.records[i].rent_device_id,
-                    rent_time: res.data.records[i].rent_time,
-                    return_device_id:res.data.records[i].return_device_id,
-                    return_time: res.data.records[i].return_time
-                  });
-                }
-                return mydata;
-              }
-
-
-    }
-
-    static checkTableFaild(err) {
-        console.log("FAIL")
-    }
 }
+
 /* ============================================================================ */
 /* "                           TRYING TO LOG OUT                              " */
 /* ============================================================================ */ 

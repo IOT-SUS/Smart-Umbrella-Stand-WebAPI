@@ -93,6 +93,10 @@ html {
   margin-top: -2.5em !important;
 }
 
+.mg-back-top35{
+  margin-top: -3.5em !important;
+}
+
 .mg-back-top15{
   margin-top: -1.5em !important;
 }
@@ -112,7 +116,7 @@ html {
 
 .bg-grad{
   background: linear-gradient(#fff 10%, #cad1e0 100%);
-  height: 140em;
+  height: 160em;
 }
 
 .fund{
@@ -431,7 +435,7 @@ input[type=text-device]:focus {
   padding-right: 3em;
   padding-bottom: 2em;
   width: 85%;
-  margin-left: 6em;
+  margin-left:auto;
   margin-top: 2em;
   position: relative;
   text-align: left;
@@ -956,18 +960,18 @@ input[type=button-long] {
   background-color: #fff;
   border: none;
   color: #42476c;
-  padding: 0.8em 1em;
+  padding: 0.8em 0.5em;
   letter-spacing: 0.1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 18px;
+  font-size: 17px;
   max-width: 80%;
   -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
   box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 40px;
-  margin: 30px 20px 30px 20px;
+  margin: 10px 20px 10px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -995,18 +999,18 @@ input[type=button-long-dark] {
   background-color: #5a5f85;
   border: none;
   color: #fff;
-  padding: 0.8em 1em;
+  padding: 0.8em 0.5em;
   letter-spacing: 0.1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 18px;
+  font-size: 17px;
   max-width: 80%;
   -webkit-box-shadow: 0px 5px 15px 0 rgb(95 116 233 / 30%);
   box-shadow: 10px 10px 10x 10px rgb(128 146 243 / 80%);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 40px;
-  margin: 30px 20px 30px 20px;
+  margin: 10px 20px 10px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1652,6 +1656,11 @@ progress {
   color: #6c757d;
 }
 
+.mg-space{
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -1680,7 +1689,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-top:-1.5em;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 5em;
 }
 
 @media (min-width: 576px) {

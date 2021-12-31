@@ -59,7 +59,15 @@
           <h2><br>Member Info</h2>
           <div class="text-center mg-small-bot"><input type="button-record" id="btn_record" class="fadeIn second"
               value="Rental Record"></div>
+          <div class="text-center mg-small-bot"><input type="button-record" id="btn_device" class="fadeIn second"
+              value="Device Details"></div>
         </div>
+
+        <!-- <div class="fadeIn first">
+          <h2><br>Device Details</h2>
+          <div class="text-center mg-small-bot"><input type="button-record" id="btn_device" class="fadeIn second"
+              value="Device Details"></div>
+        </div> -->
 
         <label-m>
           <p class="label-txt fadeIn first">EMAIL</p>
@@ -141,12 +149,35 @@
         </table>
 
         <br><br>
-    </div>
 
     </form>
   </div>
+<!-- 
+/* ============================================================================ */
+/* "                      JUMP TO DEVICE DETAIL TABLE                         " */
+/* ============================================================================ */ 
+-->
+    <div id="deviceTable">
+      <!-- Tabs Titles -->
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://images.plurk.com/6fmecMWh0FCc1treC7Evu4.png" id="icon" alt="Table Icon" />
+
+      </div>
+      <div class="fadeIn second">
+        <h2>Device Details Table<br></h2>
+      </div>
+
+      <form>
+        <table class="table table-borderless table-hover fadeIn fourth" id="deviceDetailTable"></table>
+        <br><br>
+      </form>
+    </div>
   </div>
-  <!-- 
+
+
+
+<!-- 
 /* ============================================================================ */
 /* "                                  JS                                      " */
 /* ============================================================================ */ 

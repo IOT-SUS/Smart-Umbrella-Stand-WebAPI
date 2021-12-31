@@ -392,6 +392,23 @@ input[type=text-device]:focus {
   display: none;
 }
 
+#deviceTable{
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding-top: 1em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 1em;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  display: none;
+}
+
 #formRent {
   display: none;
   -webkit-border-radius: 10px 10px 10px 10px;

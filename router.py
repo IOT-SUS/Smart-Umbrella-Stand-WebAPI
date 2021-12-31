@@ -40,11 +40,12 @@ router.post(url='/api/user/update', authentication=authentication, controller=us
 router.post(url='/api/user/delete', authentication=authentication, controller=user.delete)
 
 # Device route
-router.get (url='/api/devices'                  , controller=device.infos)
-router.get (url='/api/device/<device_id>'       , controller=device.info)
-router.post(url='/api/device/add'               , controller=device.add)
-router.post(url='/api/device/update/<device_id>', controller=device.update)
-router.post(url='/api/device/delete/<device_id>', controller=device.delete)
+router.get (url='/api/devices'                         , controller=device.infos)
+router.get (url='/api/device/<device_id>'              , controller=device.info)
+router.post(url='/api/device/add'                      , controller=device.add)
+router.post(url='/api/device/update/<device_id>'       , controller=device.update)
+router.post(url='/api/device/update_status/<device_id>', controller=device.update_status)
+router.post(url='/api/device/delete/<device_id>'       , controller=device.delete)
 
 # Rent api
 router.get (url='/api/rent/records'            , authentication=authentication, controller=urent.record)

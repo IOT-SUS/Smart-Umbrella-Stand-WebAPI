@@ -88,7 +88,31 @@ class device():
         # make response
         res.message = 'Update device information successfully.'
         return res
+    
+    @staticmethod
+    def update_status(req, res):
+        """update device information"""
+        # get url variable
+        device_id = req.url_variable['device_id']
+        
+        # not done yet, this is for future work
+        test = devicesModel.find(device_id)
+
+        # get request data
+        data = req.get_json()
+        
+        ip   = data['ip']
+        wifi = data['wifi']
+        
+        updating = {
+            'status': [ip, wifi]
+        }
+        devicesModel.update_status(device_id, updating)
  
+        # make response
+        res.message = 'Update device status successfully.'
+        return res
+
     @staticmethod
     def delete(req, res):
         """user information"""

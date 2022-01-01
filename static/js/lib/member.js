@@ -88,12 +88,14 @@ export class deviceDetailTable{
                 var status_updated = new Date(res.data[i].status_updated_at);
                 var now_date       = Date.now()
                 var time_diff      = diff_minutes(now_date, status_updated)
-                
+                var isrunning      = (time_diff < 0.1)
+                var blink          = now_date % 2 == 1 ? true : false
+
                 mydata.push({
                     device_id : res.data[i].public_id,
-                    ip        : res.data[i].status[0],
-                    wifi      : res.data[i].status[1],
-                    running   : (time_diff < 0.1) ? '● Running'  : 'Stop'
+                    ip        : isrunning ? res.data[i].status[0] : '－',
+                    wifi      : isrunning ? res.data[i].status[1] : '－',
+                    running   : isrunning ? ( blink ? '● Running' : '　 Running')  : 'Stop'
                 });
             }
             return mydata;
@@ -104,32 +106,48 @@ export class deviceDetailTable{
         console.log(res);
         $('#deviceDetailTable').bootstrapTable({
             columns:[ 
-                {field:'checkbox'   , title:'checkbox'   , align:'center', width:40, visible:true, checkbox:true},
-                {field:'running'    , title:'Status'     , align:'center', width:120, visible:true, cellStyle:(value, row, index)=>deviceDetailTable.cellStyle(value, row, index)},
+                // {field:'checkbox'   , title:'checkbox'   , align:'center', width:40, visible:true, checkbox:true},
+                {field:'running'    , title:'Status'     , align:'center', width:40, visible:true}, // cellStyle:(value, row, index)=>deviceDetailTable.cellStyle(value, row, index)},
                 {field:'device_id'  , title:'Device ID'  , align:'center', width:80, visible:true},
                 {field:'ip'         , title:'IP Adress'  , align:'center', width:120, visible:true},
-                {field:'wifi'       , title:'Wifi'       , align:'center', width:80, visible:true},
+                {field:'wifi'       , title:'Wifi'       , align:'center', width:120, visible:true},
                 ],
-                data : getMyData(),
-                search : true //查詢
+            data : getMyData(),
+            search : true, //查詢
+            rowStyle: function(row, index) {
+                if (row.ip.includes("－")) {
+                  return {
+                    css: {
+                        color: 'lightGray'
+                    }
+                  }
+                } else {
+                  return {
+                    css: {
+                        color: '#5eaad2',
+                    }
+                  }
+                }
+            },
         });
         function getMyData() {
             var mydata = [];
-            
             for (var i = 0; i < res.data.length; i++) {
                 var status_updated = new Date(res.data[i].status_updated_at);
                 var now_date       = Date.now()
                 var time_diff      = diff_minutes(now_date, status_updated)
-                
+                var isrunning      = (time_diff < 0.1)
+
                 mydata.push({
                     device_id : res.data[i].public_id,
-                    ip        : res.data[i].status[0],
-                    wifi      : res.data[i].status[1],
-                    running   : (time_diff < 0.1) ? '● Running'  : 'Stop'
+                    ip        : isrunning ? res.data[i].status[0] : '－',
+                    wifi      : isrunning ? res.data[i].status[1] : '－',
+                    running   : isrunning ? '● Running'  : ':( Stop'
                 });
             }
             return mydata;
         }
+          
         checkDeviceTimer = setInterval(() => deviceDetailTable.update(), 500);
     }
 
@@ -149,7 +167,7 @@ export class deviceDetailTable{
         }
         return {
           css: {
-            color: 'gray'
+            color: 'DarkGray'
           }
         }
           

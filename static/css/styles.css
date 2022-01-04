@@ -8815,6 +8815,10 @@ textarea.form-control-lg {
   margin-bottom: -1em;
 }
 
+.mg-smaller-bot{
+  margin-bottom: -2em;
+}
+
 .mg-small-space-bot{
   margin-bottom: 0.7em;
 }

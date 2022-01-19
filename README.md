@@ -1,6 +1,6 @@
-# BackendAPI-Flask-Structure
-結構化的範例程式
-
+# Smart-Umbrella-Stand-WebAPI
+物聯網課程-智慧共享雨傘
+- [website](http://35.236.177.163:5000/)
 <img width="480" alt="16l3TukgY6FI71lTOSSvAS" src="https://user-images.githubusercontent.com/60885166/147197836-5cec2839-89b6-4ae7-966a-3d095c723dda.png">
 
 ## File Structure

@@ -29,6 +29,9 @@ conda activate sus
 
 # Step 3 安裝套件
 pip3 install -r requirements.txt
+
+# Step 4 修改config檔案
+cp cfg.dev.py cfg.py
 ```
 
 ## Run
